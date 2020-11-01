@@ -1,31 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import axios from 'axios';
+import json from './apis/json';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: []
-    };
+const App = () =>  {
+  const [articles, setArticles] = useState([]);
+
+  const getArticles = async () => {
+    
+    const results = await json.get('/articles')
+    setArticles({articles: results.data})
   }
-  componentDidMount() {
-    axios.get('http://localhost:3000/articles')
-    .then((results) => {
-      this.setState({articles: results.data})
-      console.log('results.data')
-    })
-    .catch((data) =>{
-      console.log(data)
-    })
-  }
-  render(){
-    return (
+
+  useEffect(() => {
+    getArticles()
+  }, [])
+    // axios.get('/articles')
+    // .then((results) => {
+    //   setArticles({articles: results.data})
+    // })
+    // .catch((data) =>{
+    //   console.log(data)
+    // })
+  return(
     <div>
-      <p>testtest</p>
+      <p>aaaaa</p>
     </div>
-    )
-  }
+  )
 }
 
 export default App;
