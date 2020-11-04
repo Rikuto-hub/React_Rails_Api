@@ -31,7 +31,7 @@ const App = () =>{
       }
     }
     getArticles()
-  })
+  }, [])
   return(
     <Article articles = {articles}/>
   )
