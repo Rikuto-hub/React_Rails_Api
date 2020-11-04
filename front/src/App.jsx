@@ -1,30 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import './App.css';
 import json from './apis/json';
+import Article from './components/Article';
 
-const App = () =>  {
+// class App extends React.Component {
+
+//    constructor(props) {
+//     super(props);
+//     //const results = json.get('/articles')
+//     this.state = { articles: [] };
+//   }
+
+//   render() {
+//     return(
+//       <Article articles = {this.state.articles}/>
+//     )
+//   }
+// }
+
+const App = () =>{
   const [articles, setArticles] = useState([]);
 
-  const getArticles = async () => {
-    
-    const results = await json.get('/articles')
-    setArticles({articles: results.data})
-  }
-
   useEffect(() => {
+    const getArticles = async() => {
+      try {
+        const results = await json.get('/articles')
+        setArticles(results.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
     getArticles()
-  }, [])
-    // axios.get('/articles')
-    // .then((results) => {
-    //   setArticles({articles: results.data})
-    // })
-    // .catch((data) =>{
-    //   console.log(data)
-    // })
+  })
   return(
-    <div>
-      <p>aaaaa</p>
-    </div>
+    <Article articles = {articles}/>
   )
 }
 
