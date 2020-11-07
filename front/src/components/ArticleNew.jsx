@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import json from '../apis/json';
 
-const ArticleCreate = ({}) =>{
+const ArticleNew = ({}) =>{
   const [name, titleArticle] = useState("");
   const [price, numberArticle] = useState("");
   const [content, contentArticle] = useState("");
@@ -34,4 +34,4 @@ const ArticleCreate = ({}) =>{
   )
 }
 
-export default ArticleCreate;
+export default ArticleNew;
