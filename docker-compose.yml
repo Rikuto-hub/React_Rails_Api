@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile
     command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - ./api:/myapp:delegated
+      - ./api:/myapp
     ports:
       - 3000:3000
     depends_on:
@@ -29,7 +29,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./front:/usr/src/app:delegated
+      - ./front:/usr/src/app
     command: /bin/sh -c "yarn start"
     ports:
       - "8000:3000"
