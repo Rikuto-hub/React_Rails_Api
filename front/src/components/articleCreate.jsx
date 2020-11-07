@@ -13,10 +13,7 @@ const ArticleCreate = ({}) =>{
       titleArticle(document.getElementById('articleName').value)
       numberArticle(document.getElementById('articlePrice').value)
       contentArticle(document.getElementById('articleContent').value)
-      console.log(content)
-      // const articleTitle = document.getElementById(articleTitle).value()
-      // const articleNumber = document.getElementById(articleNumber).value()
-      // const articleContent = document.getElementById(articleContent).value()
+      
       await json.post('/articles', {
         article: {name: name, price: price, content: content}
       }) 
