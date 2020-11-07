@@ -1,11 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import json from '../apis/json';
 
-const articleCreate = ({}) =>{
+const ArticleCreate = ({}) =>{
+  const [name, titleArticle] = useState("");
+  const [price, numberArticle] = useState("");
+  const [content, contentArticle] = useState("");
+  // useEffect(() => {
+  // }, [])
+
+  const postArticle = async() => {
+    try {
+      titleArticle(document.getElementById('articleName').value)
+      numberArticle(document.getElementById('articlePrice').value)
+      contentArticle(document.getElementById('articleContent').value)
+      console.log(content)
+      // const articleTitle = document.getElementById(articleTitle).value()
+      // const articleNumber = document.getElementById(articleNumber).value()
+      // const articleContent = document.getElementById(articleContent).value()
+      await json.post('/articles', {
+        article: {name: name, price: price, content: content}
+      }) 
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return(
     <>
-      <p>aaaa</p>
+      <form>
+        <input type="text" id="articleName"/>
+        <input type="number" id="articlePrice"/>
+        <textarea id="articleContent" cols="30" rows="10" placeholder="詳細"></textarea>
+      </form>
+      <button type="submit" id="articleSubmit" onClick={postArticle}>登録</button>
     </>
   )
 }
 
-export default articleCreate;
+export default ArticleCreate;

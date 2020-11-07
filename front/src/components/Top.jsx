@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import json from '../apis/json';
-import Article from './Article';
+import Article from './Article'
 
 const Top = () =>{
   const [articles, setArticles] = useState([]);
