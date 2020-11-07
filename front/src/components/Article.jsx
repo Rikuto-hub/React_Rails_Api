@@ -1,9 +1,9 @@
 import React from 'react';
-import '../Article.css';
+import '../styles/Article.css';
 
 const Article = ({articles}) =>{
   return(
-    <React.Fragment>
+    <>
       {articles.map((article) => (
         <div className='article'>
           <p key={article.id}>{article.name}</p>
@@ -11,7 +11,7 @@ const Article = ({articles}) =>{
           <p key={article.id}>{article.content}</p>
         </div>
       ))}
-    </React.Fragment>
+    </>
   )
 }
 
