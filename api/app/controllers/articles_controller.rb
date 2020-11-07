@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    aricle = Article.new(aritlce_params)
+    article = Article.new(artilce_params)
     if article.save
       render json: article
     else
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def aritlce_params()
+  def artilce_params()
     params.require(:article).permit(:name, :price, :content)
   end
 end

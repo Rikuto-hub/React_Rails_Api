@@ -5,9 +5,16 @@ import '../styles/Footer.css'
 const Footer = () => {
   return(
     <footer>
-      <Link to="/article/create/">
-        +
-      </Link>
+      <div>
+        <Link to="/">
+          home
+        </Link>
+        </div>
+      <div>
+        <Link to="/article/create/">
+          +
+        </Link>
+      </div>
     </footer>
   )
 }
