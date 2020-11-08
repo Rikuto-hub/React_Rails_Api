@@ -1,18 +1,25 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import ArticleShow from './ArticleShow';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Article.css';
 
-const Article = ({articles}) =>{
+const Article = ({articles}) => {
+  
   return(
-    <>
-      {articles.map((article) => (
-        <div className='article'>
-          <p key={article.id}>{article.name}</p>
-          <p key={article.id}>{article.price}</p>
-          <p key={article.id}>{article.content}</p>
-        </div>
-      ))}
-    </>
+    <Router>
+      {React.Children.toArray(articles.map((article) => (
+        <Link to={{pathname:"/article/show/", state: {article} }}>
+          <div className='article' >
+            <p>{article.name}</p>
+            <p>{article.price}</p>
+            <p>{article.content}</p>
+          </div>
+        </Link>
+      )))}
+      <Route path="/article/show/" exact component={ArticleShow} />
+      {/* <ArticleShow article = {article} /> */}
+    </Router>
   )
 }
-
 export default Article;
