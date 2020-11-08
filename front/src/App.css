@@ -38,20 +38,19 @@
 }
 
 .container{
-  padding: 20px;
+  padding: 68px 20px;
 }
 
 button:hover{
   opacity: 0.7;
 }
 
-.create_btn{
-  position: fixed;
-  top: 700px;
-  right: 50px;
-  padding: 15px;
-  border-radius: 10px;
+button{
+  display: block;
+  margin: 0 auto;
+  width: 30%;
 }
+
 
 a{
   text-decoration: none;
