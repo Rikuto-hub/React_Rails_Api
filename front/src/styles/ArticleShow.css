@@ -1,0 +1,16 @@
+.articleShow{
+  position: fixed;
+  top: 85px;
+  width: 335px;
+  background-color:rgba(99, 91, 91, 0.7);
+  margin: 0 auto;
+}
+
+.articleShow p{
+  text-align: center;
+}
+
+.articleShow a{
+  float: right;
+  margin: 0 10px 10px 0;
+}
