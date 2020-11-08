@@ -12,12 +12,14 @@ const Article = ({articles}) => {
         <Link to={{pathname:"/article/show/", state: {article} }}>
           <div className='article' >
             <p>{article.name}</p>
-            <p>{article.price}</p>
+            <p>¥{article.price}</p>
             <p>{article.content}</p>
           </div>
         </Link>
       )))}
-      <Route path="/article/show/" exact component={ArticleShow} />
+      <Switch>
+        <Route path="/article/show/" exact component={ArticleShow} />
+      </Switch>
       {/* <ArticleShow article = {article} /> */}
     </Router>
   )
