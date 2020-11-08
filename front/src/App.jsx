@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Top from './components/Top';
-import articleCreate from './components/ArticleCreate';
+import articleCreate from './components/ArticleNew';
 
 const App = () =>{
   return(
