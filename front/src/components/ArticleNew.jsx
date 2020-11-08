@@ -9,10 +9,16 @@ const ArticleNew = ({}) =>{
     const name = document.getElementById('articleName').value
     const price = document.getElementById('articlePrice').value
     const content = document.getElementById('articleContent').value
+    const img = document.getElementById('articleImage').files[0]
+    let data = new FormData();
+    data.append("article[image]", img);
+    data.append("article[name]", name);
+    data.append("article[price]", price);
+    data.append("article[content]", content);
 
     try {
-      await json.post('/articles', {
-        article: {name: name, price: price, content: content}
+      await json.post('/articles', data, {
+        headers: {"content-type": "multipart/form-data"}
       }) 
     } catch (error) {
       console.log(error)
@@ -29,6 +35,9 @@ const ArticleNew = ({}) =>{
         <div className='articleNew'>
           <label htmlFor="articlePrice">Price</label>
           <input type="number" id="articlePrice"/>
+        </div>
+        <div className='articleNew'>
+          <input type="file" id="articleImage"/>
         </div>
         <div className='articleNew'>
           <textarea id="articleContent" cols="40" rows="5" placeholder="詳細"></textarea>
