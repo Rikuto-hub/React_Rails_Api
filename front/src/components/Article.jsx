@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import '../styles/Article.css';
 
 const Article = ({articles}) => {
-  
+  console.log(articles)
   return(
     <Router>
       {React.Children.toArray(articles.map((article) => (
         <Link to={{pathname:"/article/show/", state: {article} }}>
           <div className='article' >
+            <img src={article.image} />
             <p>{article.name}</p>
             <p>¥{article.price}</p>
             <p>{article.content}</p>
