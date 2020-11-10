@@ -14,7 +14,7 @@ const Movies = () => {
           key: process.env.REACT_APP_YOUTUBE_API_KEY,
           q:  word,
           type: "video",
-          maxResults: "5"
+          maxResults: "1"
         };
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search",{params})
         console.log(response)
@@ -28,7 +28,7 @@ const Movies = () => {
     }
     onWordSubmit(word)
   }
-  https://www.googleapis.com/youtube/v3/search?type=video&part=snippet&q=${keyword}&maxResults=3&key=${YOUTUBE_API_KEY}
+  
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
