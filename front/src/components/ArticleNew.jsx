@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import json from '../apis/json';
 import { Link } from 'react-router-dom';
 import '../styles/ArticleNew.css';
 
-const ArticleNew = ({}) =>{
+const ArticleNew = () =>{
 
   const postArticle = async() => {
     const name = document.getElementById('articleName').value
