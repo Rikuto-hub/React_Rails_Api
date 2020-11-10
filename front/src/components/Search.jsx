@@ -37,7 +37,6 @@ const Search = () => {
       <ImageList images = {images} />
     </>
   )
-
 }
 
 export default Search;
