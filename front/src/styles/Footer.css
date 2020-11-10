@@ -6,5 +6,5 @@ footer{
   position: fixed;
   top: 750px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
