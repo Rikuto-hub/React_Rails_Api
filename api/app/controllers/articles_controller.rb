@@ -9,15 +9,6 @@ class ArticlesController < ApplicationController
     }
   end
 
-  def show
-    article = Article.find(params[:id])
-    image = article.image
-      if image.present?
-        image = encode_base64(image)
-      end
-    render json: article
-  end
-
   def create
     article = Article.new(artilce_params)
     if article.save
