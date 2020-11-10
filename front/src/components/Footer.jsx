@@ -20,6 +20,11 @@ const Footer = () => {
           +
         </Link>
       </div>
+      <div>
+        <Link to="/movies">
+          📺
+        </Link>
+      </div>
     </footer>
   )
 }

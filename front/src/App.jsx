@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Top from './components/Top';
 import articleCreate from './components/ArticleNew';
 import Search from './components/Search';
+import Movies from './components/Movies'
 
 const App = () =>{
   return(
@@ -16,6 +17,7 @@ const App = () =>{
           <Route path="/" exact component={Top} />
           <Route path="/article/create/" exact component={articleCreate} />
           <Route path="/search" exact component={Search} />
+          <Route path="/movies" exact component={Movies} />
         </Switch>
       </div>
       <Footer />
