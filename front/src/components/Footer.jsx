@@ -7,9 +7,14 @@ const Footer = () => {
     <footer>
       <div>
         <Link to="/">
-          home
+          🏠
         </Link>
-        </div>
+      </div>
+      <div>
+        <Link to="/search">
+          📷
+        </Link>
+      </div>
       <div>
         <Link to="/article/create/">
           +

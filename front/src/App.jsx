@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Top from './components/Top';
 import articleCreate from './components/ArticleNew';
+import Search from './components/Search';
 
 const App = () =>{
   return(
@@ -14,6 +15,7 @@ const App = () =>{
         <Switch>
           <Route path="/" exact component={Top} />
           <Route path="/article/create/" exact component={articleCreate} />
+          <Route path="/search" exact component={Search} />
         </Switch>
       </div>
       <Footer />
