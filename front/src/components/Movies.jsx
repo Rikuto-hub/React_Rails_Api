@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import MovieList from './MovieList';
 
 const Movies = () => {
 
@@ -14,11 +15,11 @@ const Movies = () => {
           key: process.env.REACT_APP_YOUTUBE_API_KEY,
           q:  word,
           type: "video",
-          maxResults: "1"
+          maxResults: "2"
         };
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search",{params})
         console.log(response)
-        setMovies(response.data.kind)
+        setMovies(response.data.items)
         if(response.data.items===0){
           window.alert("動画はありません")
         }
@@ -35,9 +36,9 @@ const Movies = () => {
         <label htmlFor="">動画検索</label>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
       </form>
+      <MovieList movies = {movies} />
     </>
   )
-
 }
 
 export default Movies;
