@@ -37,7 +37,7 @@ const ArticleNew = () =>{
           <input type="number" id="articlePrice"/>
         </div>
         <div className='articleNew'>
-          <input type="file" id="articleImage"/>
+          <input type="file" id="articleImage" className='articleFile'/>
         </div>
         <div className='articleNew'>
           <textarea id="articleContent" cols="40" rows="5" placeholder="詳細"></textarea>
