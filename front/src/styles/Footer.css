@@ -1,9 +1,9 @@
 footer{
   width: 100%;
   background: linear-gradient(to top left, #6500fc 50%, white 50%);
-  padding: 23px 0;
+  padding: 18px 0;
   position: fixed;
-  top: 739px;
+  top: 749px;
   display: flex;
   justify-content: space-around;
   border-top: solid 0.1px lightgray;

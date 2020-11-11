@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
 
 const Movies = () => {
 
-  const[word, setWord] = useState('');
+  const[word, setWord] = useState('drone');
   const[movies,setMovies] = useState([])
 
   const onSearchSubmit= (event) =>{
@@ -29,12 +29,17 @@ const Movies = () => {
     }
     onWordSubmit(word)
   }
+
+  useEffect(() => {
+    document.getElementById('imageSearch').click();
+  }, [])
   
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
         <label htmlFor="">動画検索</label>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
+        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'>a</p>
       </form>
       <MovieList movies = {movies} />
     </>
