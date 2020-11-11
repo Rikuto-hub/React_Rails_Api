@@ -11,3 +11,18 @@ header a{
   padding: 0 10px;
   color: white;
 }
+
+.fadeRight {
+  animation-name: faderight;
+  animation-duration: 2s;
+}
+@keyframes faderight {
+from {
+  opacity: 0;
+  transform: translateX(-375px);
+}
+to {
+  opacity: 1;
+transform: translateX(0px);
+}
+}

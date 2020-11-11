@@ -17,3 +17,8 @@ label{
   background-color: #CCCCFF;
   font-size: 18px;
 }
+
+.articleBtn:hover{
+  background-color: #6500fc;
+  color: white;
+}
