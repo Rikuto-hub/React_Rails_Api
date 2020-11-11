@@ -5,7 +5,9 @@ import '../styles/Header.css'
 const Header = () =>{
   return(
     <header>
+      <div>
       <Link to="/">Drone</Link>
+      </div>
     </header>
   )
 }

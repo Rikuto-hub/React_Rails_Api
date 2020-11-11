@@ -16,13 +16,13 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <Link to="/article/create/">
-          +
+        <Link to="/movies">
+          📺
         </Link>
       </div>
       <div>
-        <Link to="/movies">
-          📺
+        <Link to="/article/create/">
+          +
         </Link>
       </div>
     </footer>
