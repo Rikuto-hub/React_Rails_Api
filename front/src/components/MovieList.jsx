@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Movie.css';
 
-
 const MovieList = (props) => {
   const movie = props.movies.map((movie)=>{
   const url = 'https://www.youtube.com/embed/' + movie.id.videoId;

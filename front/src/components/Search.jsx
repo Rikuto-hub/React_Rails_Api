@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import ImageList from './ImageList';
 import '../styles/Search.css';
 
 const Search = () => {
 
-  const[word, setWord] = useState('');
+  const[word, setWord] = useState('drone');
   const[images,setImages] = useState([])
 
   const onSearchSubmit= (event) =>{
@@ -28,11 +28,16 @@ const Search = () => {
     onWordSubmit(word)
   }
 
+  useEffect(() => {
+    document.getElementById('imageSearch').click();
+  }, [])
+
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
         <label htmlFor="">画像検索</label>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
+        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'>a</p>
       </form>
       <ImageList images = {images} />
     </>

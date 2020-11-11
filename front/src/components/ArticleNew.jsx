@@ -21,7 +21,7 @@ const ArticleNew = () =>{
         headers: {"content-type": "multipart/form-data"}
       }) 
     } catch (error) {
-      console.log(error)
+      window.alert('保存に失敗')
     }
   }
 
