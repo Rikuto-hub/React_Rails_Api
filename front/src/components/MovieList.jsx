@@ -7,21 +7,20 @@ const MovieList = (props) => {
     console.log(props)
   return(
     <div className="iframe">
-      <iframe 
+      <iframe title="ytmovie"
         id="ytplayer" 
         type="ytplayer" 
         width="480" 
         height="270"
         src={url}
         frameBorder="0"
-        key={movie.id}
       />
     </div>
   )
 })
 
   return(
-    <div>
+    <div key={movie.etag}>
       {movie}
     </div>
   )

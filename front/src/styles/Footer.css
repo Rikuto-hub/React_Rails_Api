@@ -8,3 +8,18 @@ footer{
   justify-content: space-around;
   border-top: solid 0.1px lightgray;
 }
+
+.fadeLeft {
+  animation-name: fadeleft;
+  animation-duration: 2s;
+}
+@keyframes fadeleft {
+from {
+  opacity: 0;
+   transform: translateX(375px);
+}
+to {
+  opacity: 1;
+  transform: translateX(0);
+}
+}

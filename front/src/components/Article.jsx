@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import '../styles/Article.css';
 
 const Article = ({articles}) => {
-  console.log(articles)
+
   return(
     <Router>
       {React.Children.toArray(articles.map((article) => (
@@ -21,8 +21,8 @@ const Article = ({articles}) => {
       <Switch>
         <Route path="/article/show/" exact component={ArticleShow} />
       </Switch>
-      {/* <ArticleShow article = {article} /> */}
     </Router>
   )
+
 }
 export default Article;

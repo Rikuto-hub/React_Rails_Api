@@ -4,7 +4,7 @@ import '../styles/Footer.css'
 
 const Footer = () => {
   return(
-    <footer>
+    <footer className='fadeLeft'>
       <div>
         <Link to="/">
           🏠
