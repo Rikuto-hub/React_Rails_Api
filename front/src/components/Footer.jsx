@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AiFillHome } from "react-icons/ai";
 import { FaImages } from "react-icons/fa";
 import { ImYoutube } from "react-icons/im";
-import { BsPlusCircle } from "react-icons/bs";
+import { BsPlusCircleFill } from "react-icons/bs";
 import '../styles/Footer.css'
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <div className='footerRight'>
         <Link to="/article/create/">
-          <BsPlusCircle />
+          <BsPlusCircleFill />
         </Link>
       </div>
     </footer>

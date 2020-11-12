@@ -1,7 +1,32 @@
-.connection{
-  margin: 50px 0;
+.connectionItem{
+  padding: 7px 0;
+  margin: 25px 0;
+  border: ridge #6500fc;
+  border-radius: 20px;
 }
 
-.connection p{
+.connectionItem p{
   width: 100%;
+  padding: 0 5px;
+}
+
+.connectionBtn{
+  position: fixed;
+  top: 770px;
+  right: 35px;
+  font-size: 25px;
+  z-index: 10;
+  color: white;
+}
+
+.connectionForm{
+  position: fixed;
+  top: 100px;
+  right: 62px;
+  background-color:rgba(99, 91, 91, 0.9);
+  padding: 50px;
+}
+
+.connectionNew{
+  margin: 50px 0;
 }

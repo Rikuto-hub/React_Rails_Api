@@ -28,3 +28,7 @@ to {
 transform: translateX(0px);
 }
 }
+
+.headerRight{
+  padding: 5px 5px 0 0;
+}

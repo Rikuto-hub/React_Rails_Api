@@ -11,7 +11,7 @@ const Header = () =>{
       </div>
       <div>
         <Link to="/connection">
-          <FaConnectdevelop />
+          <FaConnectdevelop className='headerRight'/>
         </Link>
       </div>
     </header>
