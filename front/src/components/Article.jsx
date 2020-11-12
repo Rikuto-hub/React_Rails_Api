@@ -3,6 +3,7 @@ import ArticleShow from './ArticleShow';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/Article.css';
+import logo from '../images/mountain.jpg';
 
 const Article = ({articles}) => {
 
@@ -11,7 +12,7 @@ const Article = ({articles}) => {
       {React.Children.toArray(articles.map((article) => (
         <Link to={{pathname:"/article/show/", state: {article} }}>
           <div className='article' >
-            <img src={article.image} alt='No Image'/>
+            <img src={article.image} alt={logo}/>
             <p>{article.name}</p>
             <p>¥{article.price}</p>
             <p>{article.content}</p>
