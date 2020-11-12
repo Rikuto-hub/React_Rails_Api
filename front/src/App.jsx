@@ -7,6 +7,7 @@ import Top from './components/Top';
 import articleCreate from './components/ArticleNew';
 import Search from './components/Search';
 import Movies from './components/Movies';
+import Connection from './components/Connection'
 import Advertisement from './components/Advertisement'
 
 const App = () =>{
@@ -19,6 +20,7 @@ const App = () =>{
           <Route path="/article/create/" exact component={articleCreate} />
           <Route path="/search" exact component={Search} />
           <Route path="/movies" exact component={Movies} />
+          <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />
         </Switch>
       </div>
