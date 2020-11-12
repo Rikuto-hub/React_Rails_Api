@@ -16,9 +16,12 @@
 
 .search p{
   clear: both;
+  margin: auto 0;
 }
 
 .imageSearch{
   display: inline;
-  padding: 0 12px;
+  padding: 0 5px;
+  font-size: 25px;
+  margin: auto 0;
 }

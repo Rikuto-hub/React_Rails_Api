@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import ImageList from './ImageList';
+import { CgSearchFound } from "react-icons/cg";
 import '../styles/Search.css';
 
 const Search = () => {
@@ -37,7 +38,7 @@ const Search = () => {
       <form onSubmit={onSearchSubmit} className='search'>
         <label htmlFor="">画像検索</label>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
-        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'>a</p>
+        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
       </form>
       <ImageList images = {images} />
     </>
