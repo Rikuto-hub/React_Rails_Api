@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
+import { MdYoutubeSearchedFor } from "react-icons/md";
+import { ImYoutube2 } from "react-icons/im";
 
 const Movies = () => {
 
@@ -37,9 +39,9 @@ const Movies = () => {
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
-        <label htmlFor="">動画検索</label>
+        <label htmlFor="" className='ytIcon'><ImYoutube2 /></label>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
-        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'>a</p>
+        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><MdYoutubeSearchedFor /></p>
       </form>
       <MovieList movies = {movies} />
     </>

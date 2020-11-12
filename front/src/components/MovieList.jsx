@@ -6,7 +6,7 @@ const MovieList = (props) => {
   const url = 'https://www.youtube.com/embed/' + movie.id.videoId;
     console.log(props)
   return(
-    <div className="iframe">
+    <div className="movieView">
       <iframe title="ytmovie"
         id="ytplayer" 
         type="ytplayer" 
@@ -14,13 +14,14 @@ const MovieList = (props) => {
         height="270"
         src={url}
         frameBorder="0"
+        key={movie.etag}
       />
     </div>
   )
 })
 
   return(
-    <div key={movie.etag}>
+    <div key={movie.id}>
       {movie}
     </div>
   )
