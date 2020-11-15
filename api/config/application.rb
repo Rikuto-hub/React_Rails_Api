@@ -15,14 +15,21 @@ require "action_cable/engine"
 # require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
+require 'stripe'
+
+Stripe.api_key = "sk_test_51HmuQaExyvIpFZYp51fQYsJ15SRI0OaNKAb3BNOt5YVOiWGVgwwuTranfk3QG7xVZsxEGktyxqicVg3LJs91avfU00ozcm13BN"
+
+DOMAIN = 'http://localhost:8000'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+
 
 module Api
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    Bundler.require(*Rails.groups)
+    Dotenv::Railtie.load
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

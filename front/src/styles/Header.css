@@ -11,7 +11,7 @@ header{
 header a{
   font-size: 30px;
   padding: 0 10px;
-  color: black;
+  color: white;
 }
 
 .fadeRight {
@@ -31,4 +31,5 @@ transform: translateX(0px);
 
 .headerRight{
   padding: 5px 5px 0 0;
+  color: black;
 }
