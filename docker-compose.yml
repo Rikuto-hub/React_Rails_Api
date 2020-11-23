@@ -13,15 +13,28 @@ services:
     build: 
       context: ./api/
       dockerfile: Dockerfile
-    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: /bin/sh -c "rm -f /myapp/tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     volumes:
       - ./api:/myapp:delegated
-    ports:
-      - 3000:3000
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
+      - log-data:/myapp/log
     depends_on:
       - db
     tty: true
     stdin_open: true
+  nginx:
+    build:
+      context: ./api/nginx
+      dockerfile: Dockerfile
+    restart: always 
+    volumes:
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
+    ports:
+      - 80:80
+    depends_on:
+      - api
   front:
     build: 
       context: ./front/
@@ -35,4 +48,7 @@ services:
       - "8000:3000"
 volumes:
   postgresql-data:
+  public-data:
+  tmp-data:
+  log-data:
     driver: local
