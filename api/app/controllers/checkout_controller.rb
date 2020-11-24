@@ -16,8 +16,8 @@ class CheckoutController < ApplicationController
         quantity: "1",
       }],
       mode: 'payment',
-      success_url: DOMAIN + '?success=true',
-      cancel_url: DOMAIN + '?canceled=true',
+      success_url: ENV['DOMAIN_URL'] + '?success=true',
+      cancel_url: ENV['DOMAIN_URL'] + '?canceled=true',
     })
     render json: @session
     # {
