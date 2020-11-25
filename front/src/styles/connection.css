@@ -12,11 +12,11 @@
 
 .connectionBtn{
   position: fixed;
-  top: 770px;
-  right: 35px;
+  bottom: 11.7px;
+  right: 34px;
   font-size: 25px;
   z-index: 10;
-  color: white;
+  color: #FFFF00;
 }
 
 .connectionForm{
