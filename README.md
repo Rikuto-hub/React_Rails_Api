@@ -2,8 +2,8 @@
 - ドローンのシェアリングアプリです
 - スマホ対応（IphoneX）となっております
 # 使用技術
--　フロントエンド　React
--　バックエンド　 Rails
+-　フロントエンドReact
+-　バックエンドRails
 -　Webサーバー　Nginx
 -　フロントAWS  S3,CloudFront
 -　バックエンドAWS　EC２
