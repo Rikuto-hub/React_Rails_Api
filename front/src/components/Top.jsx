@@ -11,7 +11,7 @@ const Top = () =>{
       const params = {
         search: word
       };
-      const results = await json.get('/searches')
+      const results = await json.get('/searches',{params})
       setArticles(results.data)
     } catch (error) {
       console.log(error)
