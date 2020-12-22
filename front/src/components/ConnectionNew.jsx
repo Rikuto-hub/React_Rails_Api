@@ -35,6 +35,7 @@ const ConnectionNew = () => {
       <Link to="/connection">
         <button type="submit" id="connectionSubmit" onClick={postConnection}>登録</button>
       </Link>
+      <Link to="/connection" className='connectionRoot'>×</Link>
     </div>
   )
 }

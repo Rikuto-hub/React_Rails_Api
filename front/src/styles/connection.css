@@ -30,3 +30,9 @@
 .connectionNew{
   margin: 50px 0;
 }
+
+.connectionRoot{
+  position: fixed;
+  bottom: 350px;
+  right: 65px;
+}
