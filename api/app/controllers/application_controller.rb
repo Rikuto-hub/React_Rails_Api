@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+  include SessionsHelper
 
-  before_action :check_xhr_header
+  # before_action :check_xhr_header
   
   private
 
