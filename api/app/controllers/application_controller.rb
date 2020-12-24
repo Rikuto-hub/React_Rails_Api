@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
-  include SessionsHelper
 
+  before_action :require_login
   # before_action :check_xhr_header
-  
+
   private
 
   def check_xhr_header
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
   end
 
   def require_login
-    @current_user = current_user
+    @current_user = User.find_by(id: session[:user_id])
     return if @current_user
 
     render json: { error: 'unauthorized' }, status: :unauthorized

@@ -1,4 +1,6 @@
 class CheckoutController < ApplicationController
+  skip_before_action :require_login
+
   def create
 
     article = Article.find(params[:id])

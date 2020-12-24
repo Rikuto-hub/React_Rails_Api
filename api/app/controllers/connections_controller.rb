@@ -1,4 +1,6 @@
 class ConnectionsController < ApplicationController
+  skip_before_action :require_login, only: [:create]
+
   def index
     connections = Connection.all
     render json: connections

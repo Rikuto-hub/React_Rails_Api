@@ -8,7 +8,7 @@ const Connection = () =>{
   useEffect(() => {
     const getConnections = async() => {
       try {
-        const results = await json.get('/connections')
+        const results = await json.get('/connections',{ withCredentials: true })
         setConnections(results.data)
       } catch (error) {
         console.log(error)

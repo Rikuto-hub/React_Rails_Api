@@ -11,7 +11,7 @@ const Top = () =>{
       const params = {
         search: word
       };
-      const results = await json.get('/searches',{params})
+      const results = await json.get('/searches',{params},{ withCredentials: true })
       setArticles(results.data)
     } catch (error) {
       console.log(error)
@@ -21,7 +21,7 @@ const Top = () =>{
   useEffect(() => {
     const getArticles = async() => {
       try {
-        const results = await json.get('/articles')
+        const results = await json.get('/articles',{ withCredentials: true })
         setArticles(results.data)
       } catch (error) {
         console.log(error)

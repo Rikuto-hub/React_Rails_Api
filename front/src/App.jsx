@@ -7,8 +7,9 @@ import Top from './components/Top';
 import articleCreate from './components/ArticleNew';
 import Search from './components/Search';
 import Movies from './components/Movies';
-import Connection from './components/Connection'
-import Advertisement from './components/Advertisement'
+import Connection from './components/Connection';
+import Advertisement from './components/Advertisement';
+import Registration from './components/Registration';
 
 const App = () =>{
   return(
@@ -22,6 +23,7 @@ const App = () =>{
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />
+          <Route path="/registration" exact component={Registration} />
         </Switch>
       </div>
       <Footer />

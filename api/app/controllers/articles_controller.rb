@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  skip_before_action :require_login, only: [:index]
+
   def index
     articles = Article.all.with_attached_image
     render json: articles.map{
@@ -10,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new(artilce_params)
+    article = @current_user.articles.build(article_params)
     if article.save
       render json: article
     else
@@ -19,7 +21,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    aritlce = Article.find(params[:id])
+    aritlce = @currnet_user.article.find(params[:id])
     if aritlce.destroy
       render json: article
     else
@@ -28,7 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   private
-  def artilce_params()
+  def article_params()
     params.require(:article).permit(:name, :price, :content, :image)
   end
 end

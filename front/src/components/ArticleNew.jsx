@@ -17,7 +17,7 @@ const ArticleNew = () =>{
     data.append("article[content]", content);
 
     try {
-      await json.post('/articles', data, {
+      await json.post('/articles', data, { withCredentials: true },{
         headers: {"content-type": "multipart/form-data"}
       }) 
     } catch (error) {

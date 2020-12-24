@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+  skip_before_action :require_login
+
   def index
     articles = Article.search(params[:search]).with_attached_image
     render json: articles.map{
