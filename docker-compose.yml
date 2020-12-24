@@ -35,17 +35,17 @@ services:
       - 80:80
     depends_on:
       - api
-  front:
-    build: 
-      context: ./front/
-      dockerfile: Dockerfile
-    stdin_open: true
-    tty: true
-    volumes:
-      - ./front:/usr/src/app:delegated
-    command: /bin/sh -c "yarn start"
-    ports:
-      - "8000:3000"
+  # front:
+  #   build: 
+  #     context: ./front/
+  #     dockerfile: Dockerfile
+  #   stdin_open: true
+  #   tty: true
+  #   volumes:
+  #     - ./front:/usr/src/app:delegated
+  #   command: /bin/sh -c "yarn start"
+  #   ports:
+  #     - "8000:3000"
 volumes:
   postgresql-data:
   public-data:
