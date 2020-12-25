@@ -13,6 +13,7 @@ const Top = () =>{
       };
       const results = await json.get('/searches',{params},{ withCredentials: true })
       setArticles(results.data)
+      console.log( results );
     } catch (error) {
       console.log(error)
     }
@@ -23,6 +24,7 @@ const Top = () =>{
       try {
         const results = await json.get('/articles',{ withCredentials: true })
         setArticles(results.data)
+        console.log( results );
       } catch (error) {
         console.log(error)
       }

@@ -10,6 +10,7 @@ const Connection = () =>{
       try {
         const results = await json.get('/connections',{ withCredentials: true })
         setConnections(results.data)
+        console.log( results );
       } catch (error) {
         console.log(error)
       }

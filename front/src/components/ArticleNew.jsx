@@ -17,9 +17,10 @@ const ArticleNew = () =>{
     data.append("article[content]", content);
 
     try {
-      await json.post('/articles', data, { withCredentials: true },{
+      const results = await json.post('/articles', data, { withCredentials: true },{
         headers: {"content-type": "multipart/form-data"}
       }) 
+      console.log( results );
     } catch (error) {
       window.alert('保存に失敗')
     }

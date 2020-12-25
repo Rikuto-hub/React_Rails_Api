@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save(context: :signup)
       session[:user_id] = user.id
-      payload = { message: '登録が完了しました。', name: user.name }
+      payload = { status: 'created', name: user.name }
     else
       payload = { errors: user.errors.full_messages }
     end

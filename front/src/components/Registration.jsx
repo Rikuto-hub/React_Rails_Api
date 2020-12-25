@@ -27,6 +27,7 @@ const Registration = () => {
         { withCredentials: true }
       )
       .then(response => {
+        console.log(response)
         User.login(email,password)
         if (response.data.status === "created") {
           console.log("registration");

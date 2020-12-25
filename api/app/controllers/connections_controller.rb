@@ -1,5 +1,5 @@
 class ConnectionsController < ApplicationController
-  skip_before_action :require_login, only: [:create]
+  skip_before_action :require_login, only: [:index]
 
   def index
     connections = Connection.all
@@ -7,7 +7,7 @@ class ConnectionsController < ApplicationController
   end
 
   def create
-    connection = Connection.new(connection_params)
+    connection = @current_user.connections.build(connection_params)
     if connection.save
       render json: connection
     else
