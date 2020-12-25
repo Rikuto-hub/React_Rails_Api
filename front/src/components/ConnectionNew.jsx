@@ -14,7 +14,7 @@ const ConnectionNew = () => {
     try {
       await json.post('/connections', {
         connection: {url: url, content: content}
-      })
+      },{ withCredentials: true })
     } catch (error) {
       window.alert('保存に失敗')
     }
@@ -35,6 +35,7 @@ const ConnectionNew = () => {
       <Link to="/connection">
         <button type="submit" id="connectionSubmit" onClick={postConnection}>登録</button>
       </Link>
+      <Link to="/connection" className='connectionRoot'>×</Link>
     </div>
   )
 }
