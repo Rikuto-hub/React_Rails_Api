@@ -10,6 +10,7 @@ import Movies from './components/Movies';
 import Connection from './components/Connection';
 import Advertisement from './components/Advertisement';
 import Registration from './components/Registration';
+import Login from './components/Login'
 
 const App = () =>{
   return(
@@ -23,7 +24,10 @@ const App = () =>{
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />
-          <Route path="/registration" exact component={Registration} />
+          <Switch>
+            <Route path="/registration" exact component={Registration} />
+            <Route path="/Login" exact component={Login} />
+          </Switch>
         </Switch>
       </div>
       <Footer />

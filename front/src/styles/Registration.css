@@ -6,7 +6,7 @@
 .registration input{
   margin: 50px auto 0px auto;
   display: block;
-  padding: 10px 30px;
+  padding: 7px 30px;
 }
 
 .registration p{
@@ -16,7 +16,7 @@
 
 .registration button{
   margin-top: 70px;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 30px;
 }
 

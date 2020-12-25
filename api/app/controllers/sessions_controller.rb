@@ -2,10 +2,9 @@ class SessionsController < ApplicationController
   skip_before_action :require_login
   
   def create
-    user = User.find_by(email: params[:email]&.downcase, provider: nil)
+    user = User.find_by(email: params[:email]&.downcase)
     if user&.authenticate(params[:password])
-      log_in user
-      params[:remember] ? remember(user) : forget(user)
+      session[:user_id] = user.id
       payload = { message: 'ログインしました。', name: user.name }
     else
       payload = { errors: ['メールアドレスまたはパスワードが正しくありません。'] }
@@ -14,7 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
+    session.delete(:user_id)
     render json: { message: 'ログアウトしました。' }
   end
 end

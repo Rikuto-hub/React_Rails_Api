@@ -3,25 +3,19 @@ import { Link } from 'react-router-dom';
 import json from '../apis/json';
 import '../styles/Registration.css';
 
-const Registration = () => {
-  const [name, setName] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password_confirmation, setPassword_confirmation] = useState("");
 
   const onHandleSubmit = (event) =>{
     event.preventDefault();
-    const onRegistrationSubmit = (name, email, password, password_confirmation) => {
+    const onRegistrationSubmit = (email, password) => {
       json
       .post(
-        "/users",
+        "/session",
         {
-          user: {
-            name: name,
-            email: email,
-            password: password,
-            password_confirmation: password_confirmation
-          }
+          email: email,
+          password: password,
         },
         { withCredentials: true }
       )
@@ -34,22 +28,13 @@ const Registration = () => {
         console.log("registration error", error);
       });
     }
-    onRegistrationSubmit(name, email, password, password_confirmation)
+    onRegistrationSubmit(email, password)
   }
 
   return(
     <div className="registration">
-      <p>ユーザー登録</p>
+      <p>ログイン</p>
       <form onSubmit={onHandleSubmit}>
-
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          value={name}
-          onChange={(event)=>{setName(event.target.value)}}
-          required
-        />
 
         <input
           type="email"
@@ -69,20 +54,11 @@ const Registration = () => {
           required
         />
 
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password confirmation"
-          value={password_confirmation}
-          onChange={(event)=>{setPassword_confirmation(event.target.value)}}
-          required
-        />
-
         <button type="submit">Register</button>
       </form>
-      <Link to="/Login">Login</Link>
+      <Link to="/registration">ユーザー登録</Link>
     </div>
   )
 }
 
-export default Registration;
+export default Login;
