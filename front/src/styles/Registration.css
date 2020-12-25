@@ -3,6 +3,10 @@
   -webkit-animation: fadeIn 2s ease 0s 1 normal;
 }
 
+.registration{
+  text-align: center;
+}
+
 .registration input{
   margin: 50px auto 0px auto;
   display: block;
@@ -15,9 +19,13 @@
 }
 
 .registration button{
-  margin-top: 70px;
+  margin: 70px auto;
   padding: 10px 20px;
   border-radius: 30px;
+}
+
+.registration a{
+  color: blueviolet;
 }
 
 @keyframes fadeIn {

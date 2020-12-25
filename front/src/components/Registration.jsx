@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import json from '../apis/json';
+import User from './User';
 import '../styles/Registration.css';
 
 const Registration = () => {
@@ -26,6 +27,7 @@ const Registration = () => {
         { withCredentials: true }
       )
       .then(response => {
+        User.login(email,password)
         if (response.data.status === "created") {
           console.log("registration");
         }
@@ -80,7 +82,7 @@ const Registration = () => {
 
         <button type="submit">Register</button>
       </form>
-      <Link to="/Login">Login</Link>
+      <Link to="/Login">ログイン</Link>
     </div>
   )
 }

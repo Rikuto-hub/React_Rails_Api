@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import json from '../apis/json';
+import User from './User';
 import '../styles/Registration.css';
 
 const Login = () => {
@@ -20,6 +21,7 @@ const Login = () => {
         { withCredentials: true }
       )
       .then(response => {
+        User.login(email,password)
         if (response.data.status === "created") {
           console.log("registration");
         }
