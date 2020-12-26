@@ -21,7 +21,7 @@ const Login = () => {
       )
       .then(response => {
         User.login(email,password)
-        console.log(response.data.status)
+        console.log(response)
       })
       .catch(error => {
         console.log("registration error", error);

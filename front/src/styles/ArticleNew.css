@@ -22,3 +22,11 @@ label{
   background-color: #6500fc;
   color: white;
 }
+
+#articleImage{
+  display: none;
+}
+
+.imageIcon{
+  font-size: 35px;
+}
