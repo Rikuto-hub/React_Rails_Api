@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/ArticleShow.css';
+import json from '../apis/json';
 
 import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(process.env.REACT_APP_PAY_PUBLIC_KEY);
@@ -12,22 +13,19 @@ const ArticleShow = (state) => {
   const handleClick = async (event) => {
     
     const stripe = await stripePromise;
-    const response = await fetch(process.env.REACT_APP_DEV_API_URL + "/checkout/create", {
-      method: "POST",
+    const response = await json.post("/checkout/create", {
+      id: location.state.article.id,
       headers: { "Content-Type": "application/json",
       'X-Requested-With': 'XMLHttpRequest'},
-      body : JSON.stringify({ id: location.state.article.id }),
     });
     console.log(response)
-    const session = await response.json();
+    const session = await response.data;
     
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
     });
     if (result.error) {
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
+      console.log(result)
     }
   };
 

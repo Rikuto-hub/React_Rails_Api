@@ -1,6 +1,5 @@
 class CheckoutController < ApplicationController
-  skip_before_action :require_login
-
+  # skip_before_action :require_login
   def create
 
     article = Article.find(params[:id])
@@ -13,6 +12,7 @@ class CheckoutController < ApplicationController
           currency: 'jpy',
           product_data: {
             name: article.name,
+            # images: [url_for(article.image)],
           },
         },
         quantity: "1",
