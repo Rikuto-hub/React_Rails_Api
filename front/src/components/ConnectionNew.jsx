@@ -12,9 +12,10 @@ const ConnectionNew = () => {
     data.append("article[url]", url);
     data.append("article[content]", content);
     try {
-      await json.post('/connections', {
+      const results = await json.post('/connections', {
         connection: {url: url, content: content}
-      },{ withCredentials: true })
+      })
+      console.log( results );
     } catch (error) {
       window.alert('保存に失敗')
     }

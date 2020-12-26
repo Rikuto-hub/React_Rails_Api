@@ -17,14 +17,11 @@ const Login = () => {
         {
           email: email,
           password: password,
-        },
-        { withCredentials: true }
+        }
       )
       .then(response => {
         User.login(email,password)
-        if (response.data.status === "created") {
-          console.log("registration");
-        }
+        console.log(response.data.status)
       })
       .catch(error => {
         console.log("registration error", error);

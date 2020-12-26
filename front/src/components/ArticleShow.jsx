@@ -14,7 +14,8 @@ const ArticleShow = (state) => {
     const stripe = await stripePromise;
     const response = await fetch(process.env.REACT_APP_DEV_API_URL + "/checkout/create", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+      'X-Requested-With': 'XMLHttpRequest'},
       body : JSON.stringify({ id: location.state.article.id }),
     });
     console.log(response)

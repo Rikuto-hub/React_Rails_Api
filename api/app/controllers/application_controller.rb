@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
 
   before_action :require_login
-  # before_action :check_xhr_header
+  before_action :check_xhr_header
 
   private
 
