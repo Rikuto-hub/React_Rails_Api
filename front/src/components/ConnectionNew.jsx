@@ -14,7 +14,7 @@ const ConnectionNew = () => {
     try {
       const results = await json.post('/connections', {
         connection: {url: url, content: content}
-      },{ withCredentials: true })
+      })
       console.log( results );
     } catch (error) {
       window.alert('保存に失敗')

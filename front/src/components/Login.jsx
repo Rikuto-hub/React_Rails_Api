@@ -17,8 +17,7 @@ const Login = () => {
         {
           email: email,
           password: password,
-        },
-        { withCredentials: true }
+        }
       )
       .then(response => {
         User.login(email,password)

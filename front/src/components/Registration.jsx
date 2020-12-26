@@ -23,8 +23,7 @@ const Registration = () => {
             password: password,
             password_confirmation: password_confirmation
           }
-        },
-        { withCredentials: true }
+        }
       )
       .then(response => {
         console.log(response)
