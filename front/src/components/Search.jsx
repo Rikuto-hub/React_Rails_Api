@@ -9,7 +9,7 @@ const Search = () => {
   const[word, setWord] = useState('drone');
   const[images,setImages] = useState([])
 
-  const onSearchSubmit= (event) =>{
+  const onSearchSubmit = (event) =>{
     event.preventDefault()
     const onWordSubmit = async(word) => {
       try {

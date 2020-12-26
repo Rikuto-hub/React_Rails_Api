@@ -1,9 +1,14 @@
 import React from 'react';
 import json from '../apis/json';
 import { Link } from 'react-router-dom';
+import { AiFillFileImage } from "react-icons/ai";
 import '../styles/ArticleNew.css';
 
 const ArticleNew = () =>{
+
+  const fileClick = () => {
+    document.getElementById('articleImage').click()
+  }
 
   const postArticle = async() => {
     const name = document.getElementById('articleName').value
@@ -39,6 +44,7 @@ const ArticleNew = () =>{
         </div>
         <div className='articleNew'>
           <input type="file" id="articleImage" className='articleFile'/>
+          <div className='imageIcon' onClick={fileClick} ><AiFillFileImage /></div>
         </div>
         <div className='articleNew'>
           <textarea id="articleContent" cols="40" rows="5" placeholder="詳細"></textarea>
