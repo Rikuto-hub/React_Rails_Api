@@ -8,6 +8,7 @@ class CheckoutController < ApplicationController
       customer_email: @current_user.email,
       payment_method_types: ['card'],
       metadata: {id: @current_user.id},
+      billing_address_collection: 'required',
       line_items: [{
         price_data: {
           unit_amount: article.price,
