@@ -7,6 +7,7 @@ class CheckoutController < ApplicationController
     @session = Stripe::Checkout::Session.create({
       customer_email: @current_user.email,
       payment_method_types: ['card'],
+      metadata: {id: @current_user.id},
       line_items: [{
         price_data: {
           unit_amount: article.price,
