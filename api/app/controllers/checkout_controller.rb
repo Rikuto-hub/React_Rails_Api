@@ -1,18 +1,21 @@
 class CheckoutController < ApplicationController
-  skip_before_action :require_login
-
+  # skip_before_action :require_login
   def create
 
     article = Article.find(params[:id])
 
     @session = Stripe::Checkout::Session.create({
+      customer_email: @current_user.email,
       payment_method_types: ['card'],
+      metadata: {id: @current_user.id},
+      billing_address_collection: 'required',
       line_items: [{
         price_data: {
           unit_amount: article.price,
           currency: 'jpy',
           product_data: {
             name: article.name,
+            # images: [url_for(article.image)],
           },
         },
         quantity: "1",
