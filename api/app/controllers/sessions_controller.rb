@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email]&.downcase)
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      payload = { status: 'created', name: user.name }
+      payload = { status: 'Login', name: user.name }
     else
-      payload = { stasus: ['メールアドレスまたはパスワードが正しくありません。'] }
+      payload = { status: 'メールアドレスまたはパスワードが正しくありません。' }
     end
     render json: payload
   end
