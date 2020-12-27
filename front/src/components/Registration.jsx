@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import json from '../apis/json';
 import User from './User';
 import '../styles/Registration.css';
@@ -9,6 +9,7 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
+  const history = useHistory();
 
   const onHandleSubmit = (event) =>{
     event.preventDefault();
@@ -26,14 +27,15 @@ const Registration = () => {
         }
       )
       .then(response => {
-        console.log(response)
         User.login(email,password)
-        if (response.data.status === "created") {
-          console.log("registration");
+        if (response.data.status === 'Registration'){
+          history.push("/");
         }
+        console.log(response)
+        window.alert(response.data.status)
       })
       .catch(error => {
-        console.log("registration error", error);
+        console.log("Registration error", error);
       });
     }
     onRegistrationSubmit(name, email, password, password_confirmation)
@@ -80,7 +82,7 @@ const Registration = () => {
           required
         />
 
-        <button type="submit">Register</button>
+        <button type="submit">登録</button>
       </form>
       <Link to="/Login">ログイン</Link>
     </div>

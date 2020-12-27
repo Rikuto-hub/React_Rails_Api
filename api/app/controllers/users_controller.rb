@@ -5,9 +5,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save(context: :signup)
       session[:user_id] = user.id
-      payload = { status: 'created', name: user.name }
+      payload = { status: 'Registration', name: user.name }
     else
-      payload = { errors: user.errors.full_messages }
+      payload = { status: '登録失敗', error: user.errors.full_messages }
     end
     render json: payload
   end
