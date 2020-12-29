@@ -36,9 +36,9 @@ const ConnectionNew = () => {
           <input type="text" id="connectionTag" placeholder="tag"/>
         </div>
       </form>
-      <Link to="/connection">
-        <button type="submit" id="connectionSubmit" onClick={postConnection}>登録</button>
-      </Link>
+      <button type="submit" id="connectionSubmit" onClick={postConnection}>
+        <Link to="/connection">登録</Link>
+      </button>
     </div>
   )
 }
