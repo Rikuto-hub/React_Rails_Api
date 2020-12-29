@@ -3,6 +3,7 @@ import axios from 'axios';
 import MovieList from './MovieList';
 import { MdYoutubeSearchedFor } from "react-icons/md";
 import { ImYoutube2 } from "react-icons/im";
+import '../styles/Movie.css';
 
 const Movies = () => {
 
@@ -17,7 +18,7 @@ const Movies = () => {
           key: process.env.REACT_APP_YOUTUBE_API_KEY,
           q:  word,
           type: "video",
-          maxResults: "2"
+          maxResults: "3"
         };
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search",{params})
         console.log(response)
@@ -39,7 +40,9 @@ const Movies = () => {
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
-        <label htmlFor="" className='ytIcon'><ImYoutube2 /></label>
+        <div className='ytIcon'>
+        <p htmlFor="" className='ytIcon'><ImYoutube2 /></p>
+        </div>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
         <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><MdYoutubeSearchedFor /></p>
       </form>

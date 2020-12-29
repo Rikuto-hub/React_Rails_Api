@@ -8,12 +8,14 @@ const ConnectionNew = () => {
 
     const url = document.getElementById('connectionUrl').value
     const content = document.getElementById('connectionContent').value
+    const tag = document.getElementById('connectionTag').value
     let data = new FormData();
     data.append("article[url]", url);
     data.append("article[content]", content);
+    data.append("article[tag]", tag);
     try {
       const results = await json.post('/connections', {
-        connection: {url: url, content: content}
+        connection: {url: url, content: content, tag: tag}
       })
       console.log( results );
     } catch (error) {
@@ -25,18 +27,18 @@ const ConnectionNew = () => {
     <div className='connectionForm'>
       <form>
         <div className='connectionNew'>
-          <label htmlFor="connectionUrl">URL</label>
-          <input type="url" id="connectionUrl"/>
+          <input type="url" id="connectionUrl" placeholder="URL"/>
         </div>
         <div className='connectionNew'>
-          <label htmlFor="connectionContent">説明</label>
-          <input type="text" id="connectionContent"/>
+          <input type="text" id="connectionContent" placeholder="content"/>
+        </div>
+        <div className='connectionNew'>
+          <input type="text" id="connectionTag" placeholder="tag"/>
         </div>
       </form>
       <Link to="/connection">
         <button type="submit" id="connectionSubmit" onClick={postConnection}>登録</button>
       </Link>
-      <Link to="/connection" className='connectionRoot'>×</Link>
     </div>
   )
 }

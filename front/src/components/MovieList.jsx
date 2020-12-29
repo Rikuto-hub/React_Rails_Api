@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Movie.css';
 
 const MovieList = (props) => {
   const movie = props.movies.map((movie)=>{

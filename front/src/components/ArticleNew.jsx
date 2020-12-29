@@ -32,15 +32,13 @@ const ArticleNew = () =>{
   }
 
   return(
-    <>
+    <div className='articleForm'>
       <form>
         <div className='articleNew'>
-          <label htmlFor="articleName">Name</label>
-          <input type="text" id="articleName"/>
+          <input type="text" id="articleName" placeholder="Name"/>
         </div>
         <div className='articleNew'>
-          <label htmlFor="articlePrice">Price</label>
-          <input type="number" id="articlePrice"/>
+          <input type="number" id="articlePrice" placeholder="Price"/>
         </div>
         <div className='articleNew'>
           <input type="file" id="articleImage" className='articleFile'/>
@@ -53,7 +51,7 @@ const ArticleNew = () =>{
       <Link to="/">
       <button type="submit" id="articleSubmit" className="articleBtn" onClick={postArticle}>登録</button>
       </Link>
-    </>
+    </div>
   )
 }
 

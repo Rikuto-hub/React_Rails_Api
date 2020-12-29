@@ -40,9 +40,12 @@ article = User.first.articles.create!(
 article.image.attach(io: File.open('./app/images/RacerX.jpg'), filename: 'RacerX.jpg')
 User.first.connections.create!([
   { url: 'https://www.youtube.com/watch?v=tFeYeORrVEk',
-    content: 'ドローンで撮影した絶景' },
+    content: 'ドローンで撮影した絶景',
+    tag: '景色' },
   { url: 'https://www.youtube.com/watch?v=B6HT_kYO9To',
-    content: '2億ドルのドローン' },
+    content: '2億ドルのドローン',
+    tag: '大型' },
   { url: 'https://www.youtube.com/watch?v=gIM4zKvsTIQ',
-    content: 'ドローンレース' }
+    content: 'ドローンレース',
+    tag: 'レース' }
 ])
