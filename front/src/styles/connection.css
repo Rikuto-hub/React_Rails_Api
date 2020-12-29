@@ -20,19 +20,17 @@
 }
 
 .connectionForm{
-  position: fixed;
-  top: 100px;
-  right: 62px;
-  background-color:rgba(99, 91, 91, 0.9);
-  padding: 50px;
+  text-align: center;
 }
 
-.connectionNew{
-  margin: 50px 0;
+.connectionForm input{
+  margin: 50px auto 0px auto;
+  display: block;
+  padding: 7px 30px;
 }
 
-.connectionRoot{
-  position: fixed;
-  bottom: 350px;
-  right: 65px;
+.connectionForm button{
+  margin: 70px auto;
+  padding: 10px 20px;
+  border-radius: 30px;
 }

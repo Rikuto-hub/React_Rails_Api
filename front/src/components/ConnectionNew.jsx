@@ -25,18 +25,15 @@ const ConnectionNew = () => {
     <div className='connectionForm'>
       <form>
         <div className='connectionNew'>
-          <label htmlFor="connectionUrl">URL</label>
-          <input type="url" id="connectionUrl"/>
+          <input type="url" id="connectionUrl" placeholder="URL"/>
         </div>
         <div className='connectionNew'>
-          <label htmlFor="connectionContent">説明</label>
-          <input type="text" id="connectionContent"/>
+          <input type="text" id="connectionContent" placeholder="content"/>
         </div>
       </form>
       <Link to="/connection">
         <button type="submit" id="connectionSubmit" onClick={postConnection}>登録</button>
       </Link>
-      <Link to="/connection" className='connectionRoot'>×</Link>
     </div>
   )
 }
