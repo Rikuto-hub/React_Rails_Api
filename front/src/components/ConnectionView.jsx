@@ -1,8 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { BsPlusCircleFill } from "react-icons/bs";
-import ConnectionNew from './ConnectionNew';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const ConnectionView = ({connections}) =>{
   return(
@@ -14,10 +11,6 @@ const ConnectionView = ({connections}) =>{
           </div>
         </a>
       )))}
-      <Link to="/connection/new/" className='connectionBtn'>
-        <BsPlusCircleFill />
-      </Link>
-      <Route path="/connection/new/" exact component={ConnectionNew} />
     </Router>
   )
 }

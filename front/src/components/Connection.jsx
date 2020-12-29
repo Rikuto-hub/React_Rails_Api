@@ -2,6 +2,8 @@ import React, { useEffect,useState } from 'react';
 import json from '../apis/json';
 import ConnectionView from './ConnectionView'
 import '../styles/connection.css'
+import { Link } from 'react-router-dom';
+import { BsPlusCircleFill } from "react-icons/bs";
 
 const Connection = () =>{
   const [connections, setConnections] = useState([]);
@@ -18,7 +20,12 @@ const Connection = () =>{
     getConnections()
   }, [])
   return(
+    <>
     < ConnectionView connections = {connections} />
+    <Link to="/connection/new/" className='connectionBtn'>
+        <BsPlusCircleFill />
+    </Link>
+    </>
   )
 }
 

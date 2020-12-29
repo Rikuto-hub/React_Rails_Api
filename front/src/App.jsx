@@ -8,6 +8,7 @@ import articleCreate from './components/ArticleNew';
 import Search from './components/Search';
 import Movies from './components/Movies';
 import Connection from './components/Connection';
+import ConnectionNew from './components/ConnectionNew';
 import Advertisement from './components/Advertisement';
 import Registration from './components/Registration';
 import Login from './components/Login';
@@ -27,7 +28,10 @@ const App = () =>{
           <Route path="/registration" exact component={Registration} />
           <Route path="/login" exact component={Login} />
           <Auth>
-            <Route path="/article/create/" exact component={articleCreate} />
+            <Switch>
+              <Route path="/article/create/" exact component={articleCreate} />
+              <Route path="/connection/new/" exact component={ConnectionNew} />
+            </Switch>
           </Auth>
         </Switch>
       </div>
