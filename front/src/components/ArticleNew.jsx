@@ -48,9 +48,9 @@ const ArticleNew = () =>{
           <textarea id="articleContent" cols="40" rows="5" placeholder="詳細"></textarea>
         </div>
       </form>
-      <Link to="/">
-      <button type="submit" id="articleSubmit" className="articleBtn" onClick={postArticle}>登録</button>
-      </Link>
+      <button type="submit" id="articleSubmit" className="articleBtn" onClick={postArticle}>
+        <Link to="/">登録</Link>
+      </button>
     </div>
   )
 }
