@@ -1,21 +1,24 @@
+.articleForm{
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
 .articleNew{
   display: block;
-  padding: 40px 0;
-  margin: 0 auto;
   text-align: center;
 }
 
-label{
+.articleNew input{
+  margin: 50px auto 0px auto;
   display: block;
+  padding: 7px 30px;
 }
 
 .articleBtn{
-  border-radius: 20px;
-  margin-top: 20px;
-  padding: 10px 30px;
-  width: 35%;
+  margin: 70px auto;
+  padding: 10px 20px;
+  border-radius: 30px;
   background-color: #CCCCFF;
-  font-size: 18px;
 }
 
 .articleBtn:hover{
@@ -29,4 +32,15 @@ label{
 
 .imageIcon{
   font-size: 35px;
+  margin: 50px 0;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
 }

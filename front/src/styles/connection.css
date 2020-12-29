@@ -21,6 +21,8 @@
 
 .connectionForm{
   text-align: center;
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
 }
 
 .connectionForm input{
@@ -33,4 +35,14 @@
   margin: 70px auto;
   padding: 10px 20px;
   border-radius: 30px;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
 }
