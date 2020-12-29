@@ -36,7 +36,7 @@ const Search = () => {
   return(
     <>
       <form onSubmit={onSearchSubmit} className='search'>
-        <label htmlFor="">画像検索</label>
+        <p>画像検索</p>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
         <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
       </form>

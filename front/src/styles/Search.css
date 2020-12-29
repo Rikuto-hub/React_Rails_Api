@@ -16,7 +16,8 @@
 
 .search p{
   clear: both;
-  margin: auto 0;
+  margin: 20px 0 0 0;
+  text-align: center;
 }
 
 .imageSearch{
