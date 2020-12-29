@@ -17,6 +17,6 @@ class ConnectionsController < ApplicationController
 
   private
   def connection_params
-    params.require(:connection).permit(:url, :content)
+    params.require(:connection).permit(:url, :content, :tag)
   end
 end

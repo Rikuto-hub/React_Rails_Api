@@ -17,7 +17,7 @@ const Movies = () => {
           key: process.env.REACT_APP_YOUTUBE_API_KEY,
           q:  word,
           type: "video",
-          maxResults: "2"
+          maxResults: "3"
         };
         const response = await axios.get("https://www.googleapis.com/youtube/v3/search",{params})
         console.log(response)

@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_142041) do
     t.bigint "user_id", null: false
     t.text "url", null: false
     t.text "content", null: false
+    t.text "tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_connections_on_user_id"
