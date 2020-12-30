@@ -6,6 +6,7 @@ header{
   border-bottom: solid 0.1px lightgray;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 
 header a{
