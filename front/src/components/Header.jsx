@@ -4,10 +4,15 @@ import { FaConnectdevelop } from "react-icons/fa";
 import '../styles/Header.css'
 
 const Header = () =>{
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+   }
+
   return(
     <header className='fadeRight'>
-      <div>
-        <Link to="/">Drone</Link>
+      <div className='headerLeft' onClick={scrollToTop}>
+        Drone
       </div>
       <div>
         <Link to="/connection">

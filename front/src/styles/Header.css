@@ -14,6 +14,12 @@ header a{
   color: white;
 }
 
+.headerLeft{
+  font-size: 30px;
+  padding: 0 10px;
+  color: white;
+}
+
 .fadeRight {
   animation-name: faderight;
   animation-duration: 2s;
