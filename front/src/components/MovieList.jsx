@@ -3,7 +3,6 @@ import React from 'react';
 const MovieList = (props) => {
   const movie = props.movies.map((movie)=>{
   const url = 'https://www.youtube.com/embed/' + movie.id.videoId;
-    console.log(props)
   return(
     <div className="movieView">
       <iframe title="ytmovie"
@@ -13,7 +12,7 @@ const MovieList = (props) => {
         height="270"
         src={url}
         frameBorder="0"
-        key={movie.etag}
+        key={movie.id}
       />
     </div>
   )

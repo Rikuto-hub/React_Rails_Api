@@ -1,8 +1,10 @@
 import React from 'react';
 import json from '../apis/json';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const ConnectionNew = () => {
+
+  const history = useHistory();
 
   const postConnection = async() => {
 
@@ -14,10 +16,13 @@ const ConnectionNew = () => {
     data.append("article[content]", content);
     data.append("article[tag]", tag);
     try {
-      const results = await json.post('/connections', {
+      const response = await json.post('/connections', {
         connection: {url: url, content: content, tag: tag}
       })
-      console.log( results );
+      if (response.data.status === 'ok'){
+        history.push("/connection");
+      }
+      console.log( response );
     } catch (error) {
       window.alert('保存に失敗')
     }
@@ -37,7 +42,7 @@ const ConnectionNew = () => {
         </div>
       </form>
       <button type="submit" id="connectionSubmit" onClick={postConnection}>
-        <Link to="/connection">登録</Link>
+        登録
       </button>
     </div>
   )

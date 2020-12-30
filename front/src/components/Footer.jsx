@@ -15,7 +15,7 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <Link to="/search">
+        <Link to="/image">
           <FaImages />
         </Link>
       </div>

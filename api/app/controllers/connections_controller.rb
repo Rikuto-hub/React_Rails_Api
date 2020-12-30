@@ -9,7 +9,7 @@ class ConnectionsController < ApplicationController
   def create
     connection = @current_user.connections.build(connection_params)
     if connection.save
-      render json: connection
+      render json: { status: 'ok', connection: connection }
     else
       render json: connection.errors
     end

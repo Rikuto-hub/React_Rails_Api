@@ -11,9 +11,9 @@ const Top = () =>{
       const params = {
         search: word
       };
-      const results = await json.get('/searches',{params})
-      setArticles(results.data)
-      console.log( results );
+      const response = await json.get('/searches',{params})
+      setArticles(response.data)
+      console.log( response );
     } catch (error) {
       console.log(error)
     }
@@ -22,9 +22,9 @@ const Top = () =>{
   useEffect(() => {
     const getArticles = async() => {
       try {
-        const results = await json.get('/articles')
-        setArticles(results.data)
-        console.log( results );
+        const response = await json.get('/articles')
+        setArticles(response.data)
+        console.log( response );
       } catch (error) {
         console.log(error)
       }

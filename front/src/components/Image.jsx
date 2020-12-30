@@ -4,7 +4,7 @@ import ImageList from './ImageList';
 import { CgSearchFound } from "react-icons/cg";
 import '../styles/Search.css';
 
-const Search = () => {
+const Image = () => {
 
   const[word, setWord] = useState('drone');
   const[images,setImages] = useState([])
@@ -45,4 +45,4 @@ const Search = () => {
   )
 }
 
-export default Search;
+export default Image;

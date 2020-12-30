@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: [:index]
 
   def index
-    articles = Article.all.with_attached_image
+    articles = Article.all
     render json: articles.map{
       |article|
       article.as_json.merge({
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     article = @current_user.articles.build(article_params)
     if article.save
-      render json: article
+      render json: { status: 'ok', article: article }
     else
       render json: article.errors
     end
