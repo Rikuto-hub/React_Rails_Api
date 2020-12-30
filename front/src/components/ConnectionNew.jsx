@@ -14,10 +14,10 @@ const ConnectionNew = () => {
     data.append("article[content]", content);
     data.append("article[tag]", tag);
     try {
-      const results = await json.post('/connections', {
+      const response = await json.post('/connections', {
         connection: {url: url, content: content, tag: tag}
       })
-      console.log( results );
+      console.log( response );
     } catch (error) {
       window.alert('保存に失敗')
     }

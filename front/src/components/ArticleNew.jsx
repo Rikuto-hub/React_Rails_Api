@@ -22,10 +22,10 @@ const ArticleNew = () =>{
     data.append("article[content]", content);
 
     try {
-      const results = await json.post('/articles', data, {
+      const response = await json.post('/articles', data, {
         headers: {"content-type": "multipart/form-data"},
       }) 
-      console.log( results );
+      console.log( response );
     } catch (error) {
       window.alert('保存に失敗')
     }
@@ -45,7 +45,7 @@ const ArticleNew = () =>{
           <div className='imageIcon' onClick={fileClick} ><AiFillFileImage /></div>
         </div>
         <div className='articleNew'>
-          <textarea id="articleContent" cols="40" rows="5" placeholder="詳細"></textarea>
+          <textarea id="articleContent" cols="40" rows="5" placeholder="content"></textarea>
         </div>
       </form>
       <button type="submit" id="articleSubmit" className="articleBtn" onClick={postArticle}>

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import MovieList from './MovieList';
-import { MdYoutubeSearchedFor } from "react-icons/md";
+import { CgSearchFound } from "react-icons/cg";
 import { ImYoutube2 } from "react-icons/im";
 import '../styles/Movie.css';
 
@@ -44,7 +44,7 @@ const Movies = () => {
         <p htmlFor="" className='ytIcon'><ImYoutube2 /></p>
         </div>
         <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
-        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><MdYoutubeSearchedFor /></p>
+        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
       </form>
       <MovieList movies = {movies} />
     </>

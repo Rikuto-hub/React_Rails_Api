@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Top from './components/Top';
 import articleCreate from './components/ArticleNew';
-import Search from './components/Search';
+import Image from './components/Image';
 import Movies from './components/Movies';
 import Connection from './components/Connection';
 import ConnectionNew from './components/ConnectionNew';
@@ -21,7 +21,7 @@ const App = () =>{
       <div className='container'>
         <Switch>
           <Route path="/" exact component={Top} />
-          <Route path="/search" exact component={Search} />
+          <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />

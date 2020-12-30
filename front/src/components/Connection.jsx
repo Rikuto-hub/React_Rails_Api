@@ -10,9 +10,9 @@ const Connection = () =>{
   useEffect(() => {
     const getConnections = async() => {
       try {
-        const results = await json.get('/connections')
-        setConnections(results.data)
-        console.log( results );
+        const response = await json.get('/connections')
+        setConnections(response.data)
+        console.log( response );
       } catch (error) {
         console.log(error)
       }
