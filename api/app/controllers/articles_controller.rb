@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   def create
     article = @current_user.articles.build(article_params)
     if article.save
-      render json: article
+      render json: { status: 'ok', article: article }
     else
       render json: article.errors
     end
