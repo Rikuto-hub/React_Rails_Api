@@ -43,8 +43,10 @@ const Movies = () => {
         <div className='ytIcon'>
         <p htmlFor="" className='ytIcon'><ImYoutube2 /></p>
         </div>
-        <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
-        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
+        <div className='searchContainer'>
+          <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
+          <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
+        </div>
       </form>
       <MovieList movies = {movies} />
     </>
