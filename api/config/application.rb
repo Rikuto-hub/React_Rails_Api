@@ -27,6 +27,7 @@ module Api
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    Rails.application.config.active_storage.service_urls_expire_in = 1.hour
     Bundler.require(*Rails.groups)
     Dotenv::Railtie.load
     Stripe.api_key =  ENV['PAY_SECRET_KEY']

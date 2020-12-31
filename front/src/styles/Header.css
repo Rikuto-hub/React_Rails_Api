@@ -6,9 +6,16 @@ header{
   border-bottom: solid 0.1px lightgray;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 
 header a{
+  font-size: 30px;
+  padding: 0 10px;
+  color: white;
+}
+
+.headerLeft{
   font-size: 30px;
   padding: 0 10px;
   color: white;

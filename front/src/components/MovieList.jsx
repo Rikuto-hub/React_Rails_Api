@@ -12,7 +12,7 @@ const MovieList = (props) => {
         height="270"
         src={url}
         frameBorder="0"
-        key={movie.id}
+        key={movie.id.videoId}
       />
     </div>
   )
