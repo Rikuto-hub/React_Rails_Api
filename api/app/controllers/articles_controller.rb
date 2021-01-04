@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   skip_before_action :require_login, only: [:index]
 
   def index
-    articles = Article.all
+    articles = Article.all.with_attached_image
     render json: articles.map{
       |article|
       article.as_json.merge({
