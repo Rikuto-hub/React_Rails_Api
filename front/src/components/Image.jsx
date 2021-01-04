@@ -37,8 +37,10 @@ const Image = () => {
     <>
       <form onSubmit={onSearchSubmit} className='search'>
         <p>画像検索</p>
-        <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
-        <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
+        <div className='searchContainer'>
+          <input type="text" value={word} onChange={(event)=>{setWord(event.target.value)}}/>
+          <p onClick={onSearchSubmit} className='imageSearch' id='imageSearch'><CgSearchFound /></p>
+        </div>
       </form>
       <ImageList images = {images} />
     </>
