@@ -13,6 +13,7 @@ import Advertisement from './components/Advertisement';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import Auth from './components/Auth';
+import ProfileNew from './components/ProfileNew';
 
 const App = () =>{
   return(
@@ -26,6 +27,7 @@ const App = () =>{
           <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />
           <Route path="/registration" exact component={Registration} />
+          <Route path="/profile/edit" exact component={ProfileNew} />
           <Route path="/login" exact component={Login} />
           <Auth>
             <Switch>

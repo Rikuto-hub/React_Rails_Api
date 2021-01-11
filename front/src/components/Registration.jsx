@@ -29,10 +29,9 @@ const Registration = () => {
       .then(response => {
         User.login(email,password)
         if (response.data.status === 'Registration'){
-          history.push("/");
+          history.push("/profile/edit");
         }
         console.log(response)
-        window.alert(response.data.status)
       })
       .catch(error => {
         console.log("Registration error", error);
@@ -82,7 +81,7 @@ const Registration = () => {
           required
         />
 
-        <button type="submit">登録</button>
+        <button type="submit">次へ</button>
       </form>
       <Link to="/Login">ログイン</Link>
     </div>
