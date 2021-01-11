@@ -13,6 +13,7 @@ import Advertisement from './components/Advertisement';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import Auth from './components/Auth';
+import ProfileNew from './components/ProfileNew';
 
 const App = () =>{
   return(
@@ -20,6 +21,7 @@ const App = () =>{
       <Header />
       <div className='container'>
         <Switch>
+          <Route path="/profile/edit" exact component={ProfileNew} />
           <Route path="/" exact component={Top} />
           <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
