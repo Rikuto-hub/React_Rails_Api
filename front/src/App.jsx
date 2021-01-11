@@ -21,13 +21,13 @@ const App = () =>{
       <Header />
       <div className='container'>
         <Switch>
-          <Route path="/profile/edit" exact component={ProfileNew} />
           <Route path="/" exact component={Top} />
           <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
           <Route path="/ad" exact component={Advertisement} />
           <Route path="/registration" exact component={Registration} />
+          <Route path="/profile/edit" exact component={ProfileNew} />
           <Route path="/login" exact component={Login} />
           <Auth>
             <Switch>

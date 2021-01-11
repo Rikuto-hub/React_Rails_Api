@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import json from '../apis/json';
 import { AiFillFileImage } from "react-icons/ai";
 import '../styles/Profile.css';
@@ -8,6 +9,7 @@ const ProfileNew = () => {
   const [name, setName] = useState("");
   const [introduction, setIntroduction] = useState("宜しくお願いします。");
   const [avatar, setAvatar] = useState("")
+  const history = useHistory();
 
   const fileClick = () => {
     document.getElementById('Avatar').click()
@@ -29,11 +31,14 @@ const ProfileNew = () => {
         }
       )
       .then(response => {
+        if (response.data.status === 'Registration'){
+          history.push("/");
+        }
         console.log(response)
         window.alert(response.data.status)
       })
       .catch(error => {
-        console.log("error");
+        console.log("Registration error", error);
       });
     }
     onRegistrationSubmit(name, introduction, avatar)

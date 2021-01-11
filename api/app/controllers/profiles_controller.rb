@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   def show
     profile = @current_user.profile
-    render :json profile
+    render json: profile
     connections = @current_user.connections
     render json: connections
   end
@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     profile = @current_user.prepare_profile
     profile.assign_attributes(profile_params)
     if profile.save
-      render json: { status: 'ok', profile: profile }
+      render json: { status: 'Registration', profile: profile }
     else
       render json: {status: 'error'}
     end
