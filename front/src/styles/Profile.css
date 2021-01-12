@@ -25,3 +25,18 @@
   border-radius: 30px;
   background-color: whitesmoke;
 }
+
+.profileTop{
+  margin: 30px 0;
+}
+
+.profileTop img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.profileBtn{
+  width: 70%;
+  margin: 30px auto;
+}
