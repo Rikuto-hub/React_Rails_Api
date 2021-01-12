@@ -1,9 +1,11 @@
 class ProfilesController < ApplicationController
   def show
     profile = @current_user.profile
-    render json: profile
-    connections = @current_user.connections
-    render json: connections
+    render json: profile.as_json.merge({
+      avatar: url_for(profile.avatar)
+    })
+    # connections = @current_user.connections
+    # render json: connections
   end
 
   def update
