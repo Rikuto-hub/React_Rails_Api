@@ -1,11 +1,19 @@
 class ProfilesController < ApplicationController
   def show
+    articles = @current_user.articles
+    articles = articles.map{
+      |article|
+      article.as_json.merge({
+        image:url_for(article.image)
+      })
+    }
     profile = @current_user.profile
+    connections = @current_user.connections
     render json: profile.as_json.merge({
-      avatar: url_for(profile.avatar)
+      avatar: url_for(profile.avatar),
+      connections: connections,
+      articles: articles
     })
-    # connections = @current_user.connections
-    # render json: connections
   end
 
   def update
