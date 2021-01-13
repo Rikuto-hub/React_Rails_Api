@@ -13,6 +13,7 @@ import Advertisement from './components/Advertisement';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import Auth from './components/Auth';
+import Profile from './components/Profile';
 import ProfileNew from './components/ProfileNew';
 
 const App = () =>{
@@ -25,6 +26,7 @@ const App = () =>{
           <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
+          <Route path="/profile" exact component={Profile} />
           <Route path="/ad" exact component={Advertisement} />
           <Route path="/registration" exact component={Registration} />
           <Route path="/profile/edit" exact component={ProfileNew} />

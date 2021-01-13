@@ -1,7 +1,7 @@
 .connectionItem{
   padding: 7px 0;
   margin: 25px 0;
-  border: ridge #FF713E;
+  border: ridge orange;
   border-radius: 20px;
 }
 
@@ -36,6 +36,16 @@
   padding: 10px 20px;
   border-radius: 30px;
   background-color: yellow;
+}
+
+.profileWrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -30px;
+}
+
+.profileIcon{
+  font-size: 30px;
 }
 
 @keyframes fadeIn {

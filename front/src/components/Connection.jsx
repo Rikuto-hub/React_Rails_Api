@@ -4,6 +4,8 @@ import ConnectionView from './ConnectionView'
 import '../styles/connection.css'
 import { Link } from 'react-router-dom';
 import { BsPlusCircleFill } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
+import { RiArticleLine } from "react-icons/ri";
 
 const Connection = () =>{
   const [connections, setConnections] = useState([]);
@@ -21,10 +23,14 @@ const Connection = () =>{
   }, [])
   return(
     <>
-    < ConnectionView connections = {connections} />
-    <Link to="/connection/new/" className='connectionBtn'>
-        <BsPlusCircleFill />
-    </Link>
+      <div className='profileWrapper'>
+        <p><RiArticleLine className='profileIcon'/></p>
+        <Link to="/profile"><p><CgProfile className='profileIcon'/></p></Link>
+      </div>
+      < ConnectionView connections = {connections} />
+      <Link to="/connection/new/" className='connectionBtn'>
+          <BsPlusCircleFill />
+      </Link>
     </>
   )
 }

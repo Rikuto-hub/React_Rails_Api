@@ -8,7 +8,7 @@ const ProfileNew = () => {
 
   const [name, setName] = useState("");
   const [introduction, setIntroduction] = useState("宜しくお願いします。");
-  const [avatar, setAvatar] = useState("")
+  const [avatar, setAvatar] = useState([]);
   const history = useHistory();
 
   const fileClick = () => {
@@ -18,15 +18,14 @@ const ProfileNew = () => {
   const onHandleSubmit = (event) =>{
     event.preventDefault();
     const onRegistrationSubmit = (name, introduction, avatar) => {
+      let data = new FormData();
+      data.append("profile[avatar]", avatar);
+      data.append("profile[name]", name);
+      data.append("profile[introduction]", introduction);
       json
       .put(
-        "/profile",
+        "/profile", data, 
         {
-          profile: {
-            name: name,
-            introduction: introduction,
-            avatar: avatar
-          },
           headers: {"content-type": "multipart/form-data"}
         }
       )
@@ -58,9 +57,8 @@ const ProfileNew = () => {
           required
         />
 
-        <input
-          type="text"
-          name="introduction"
+        <textarea
+          cols="23" rows="3"
           placeholder="introduction"
           value={introduction}
           onChange={(event)=>{setIntroduction(event.target.value)}}
