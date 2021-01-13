@@ -38,6 +38,15 @@
   background-color: yellow;
 }
 
+.profileWrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.profileIcon{
+  font-size: 30px;
+}
+
 @keyframes fadeIn {
   0% {opacity: 0}
   100% {opacity: 1}
