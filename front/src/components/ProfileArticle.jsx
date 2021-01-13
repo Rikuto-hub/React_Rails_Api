@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, BrowserRouter as Router} from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ArticleShow from './ArticleShow';
 
 const ProfileArticle = ({articles}) => {
   return(
@@ -8,12 +9,12 @@ const ProfileArticle = ({articles}) => {
         <Link to={{pathname:"/article/show/", state: {article} }}>
           <div className='article' >
             <img src={article.image} alt="画像がありません" />
-            <p>{article.name}</p>
-            <p>¥{article.price}</p>
-            <p>{article.content}</p>
           </div>
         </Link>
       )))}
+      <Switch>
+        <Route path="/article/show/" exact component={ArticleShow} />
+      </Switch>
     </Router>
   )
 }

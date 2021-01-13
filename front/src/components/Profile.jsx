@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import json from '../apis/json';
 import ProfileTop from './ProfileTop';
 import ProfileTag from './ProfileTag'
-import ProfileConnection from './ProfileConnection';
+import ConnectionView from './ConnectionView';
 import ProfileArticle from './ProfileArticle'
 
 const Profile = () => {
@@ -33,7 +33,7 @@ const Profile = () => {
         <ProfileTop profile = {profile} />
         <ProfileTag />
         <Switch>
-          <Route exact path="/profile" render={() => <ProfileConnection connections={connections} />} />
+          <Route exact path="/profile" render={() => <ConnectionView connections={connections} />} />
           <Route exact path="/profile/article" render={() => <ProfileArticle articles={articles} />} />
         </Switch>
       </Router>
