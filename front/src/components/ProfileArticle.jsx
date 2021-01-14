@@ -7,7 +7,7 @@ const ProfileArticle = ({articles}) => {
     <Router>
       {React.Children.toArray(articles.map((article) => (
         <Link to={{pathname:"/article/show/", state: {article} }}>
-          <div className='article' >
+          <div className='profileArticle' >
             <img src={article.image} alt="画像がありません" />
           </div>
         </Link>

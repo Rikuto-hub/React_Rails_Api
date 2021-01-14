@@ -6,12 +6,12 @@ import { AiFillShop } from "react-icons/ai";
 const ProfileTag = () => {
   return(
     <div className='profileTab'>
-      <p>
+      <div className='profileTabLeft'>
       <Link to="/profile"><BsFilePost className='profileIcon'/></Link>
-      </p>
-      <p>
+      </div>
+      <div className='profileTabRight'>
         <Link to="/profile/article"><AiFillShop className='profileIcon'/></Link>
-      </p>
+      </div>
     </div>
   )
 }

@@ -47,8 +47,21 @@
 .profileTab{
   display: flex;
   justify-content: space-around;
+  margin-bottom: 10px;
+  border-top: 1.5px ridge black;
+  border-bottom: 1.5px ridge black;
 }
 
-.profileTab p{
-  
+.profileTabLeft{
+  padding: 0 70px;
+}
+
+.profileTabRight{
+  padding: 0 70px;
+}
+
+.profileArticle img{
+  width: calc(100% / 3);
+  height: 111.66px;
+  float: left;
 }

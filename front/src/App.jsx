@@ -26,13 +26,13 @@ const App = () =>{
           <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
-          <Route path="/profile" exact component={Profile} />
           <Route path="/ad" exact component={Advertisement} />
           <Route path="/registration" exact component={Registration} />
-          <Route path="/profile/edit" exact component={ProfileNew} />
           <Route path="/login" exact component={Login} />
           <Auth>
             <Switch>
+              <Route path="/profile" exact component={Profile} />
+              <Route path="/profile/edit" exact component={ProfileNew} />
               <Route path="/article/create/" exact component={articleCreate} />
               <Route path="/connection/new/" exact component={ConnectionNew} />
             </Switch>
