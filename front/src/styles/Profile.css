@@ -52,3 +52,9 @@
 .profileTab p{
   
 }
+
+.profileArticle img{
+  width: calc(100% / 3);
+  height: 111.66px;
+  float: left;
+}
