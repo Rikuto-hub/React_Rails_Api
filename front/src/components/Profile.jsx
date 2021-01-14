@@ -4,7 +4,7 @@ import json from '../apis/json';
 import ProfileTop from './ProfileTop';
 import ProfileTag from './ProfileTag'
 import ConnectionView from './ConnectionView';
-import ProfileArticle from './ProfileArticle'
+import ProfileArticle from './ProfileArticle';
 
 const Profile = () => {
 
@@ -29,8 +29,8 @@ const Profile = () => {
 
   return(
     <>
+      <ProfileTop profile = {profile} />
       <Router>
-        <ProfileTop profile = {profile} />
         <ProfileTag />
         <Switch>
           <Route exact path="/profile" render={() => <ConnectionView connections={connections} />} />
