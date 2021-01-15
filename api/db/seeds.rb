@@ -44,9 +44,9 @@ User.first.connections.create!([
     tag: 'レース' }
 ])
 
-profile = Profile.create!(
-    user_id: 1,
-    name: 'Root',
-    introduction: '宜しくお願いします。',
-)
-profile.avatar.attach(io: File.open('./app/images/avatar.jpeg'), filename: 'avatar.jpg')
+# profile = Profile.create!(
+#     user_id: 1,
+#     name: 'Root',
+#     introduction: '宜しくお願いします。',
+# )
+# profile.avatar.attach(io: File.open('./app/images/avatar.jpeg'), filename: 'avatar.jpg')

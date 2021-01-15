@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import json from '../apis/json';
 import { AiFillFileImage } from "react-icons/ai";
@@ -10,6 +10,21 @@ const ProfileNew = () => {
   const [introduction, setIntroduction] = useState("宜しくお願いします。");
   const [avatar, setAvatar] = useState([]);
   const history = useHistory();
+
+  useEffect(() => {
+    const getProfile = async() => {
+      try {
+        const response = await json.get('/profile')
+        setName(response.data.name)
+        setIntroduction(response.data.introduction)
+        setAvatar(response.data.avatar)
+        console.log( response );
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getProfile()
+  }, [])
 
   const fileClick = () => {
     document.getElementById('Avatar').click()
