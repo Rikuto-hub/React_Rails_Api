@@ -25,6 +25,7 @@ header a{
   animation-name: faderight;
   animation-duration: 2s;
 }
+
 @keyframes faderight {
 from {
   opacity: 0;
@@ -33,8 +34,7 @@ from {
 to {
   opacity: 1;
 transform: translateX(0px);
-}
-}
+}}
 
 .headerRight{
   padding: 5px 5px 0 0;

@@ -12,6 +12,7 @@ const ProfileArticle = ({articles}) => {
           </div>
         </Link>
       )))}
+      <p className='clear'></p>
       <Switch>
         <Route path="/article/show/" exact component={ArticleShow} />
       </Switch>
