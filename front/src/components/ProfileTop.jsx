@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Avatar from '../images/avatar.jpeg';
 
-const ProfileTop = ({profile}) => {
+const ProfileTop = ({profile, props}) => {
   return(
     <div className='profileTop'>
       {profile ? (
@@ -18,7 +18,7 @@ const ProfileTop = ({profile}) => {
         <p>自己紹介</p>
       )}
       <Link to="/profile/edit">
-        <button className='profileBtn'>Profileを編集する</button>
+        <button className='profileBtn'>{props}</button>
       </Link>
     </div>
   )
