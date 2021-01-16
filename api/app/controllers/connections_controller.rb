@@ -3,7 +3,13 @@ class ConnectionsController < ApplicationController
 
   def index
     connections = Connection.all
-    render json: connections
+    render json: connections.map{
+      |connection|
+      connection.as_json.merge({ 
+        user_name: connection.user.profile.name,
+        avatar: url_for(connection.user.profile.avatar),
+      })
+    }
   end
 
   def create

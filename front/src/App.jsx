@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Auth from './components/Auth';
 import Profile from './components/Profile';
 import ProfileNew from './components/ProfileNew';
+import Account from './components/Account'
 
 const App = () =>{
   return(
@@ -26,6 +27,7 @@ const App = () =>{
           <Route path="/Image" exact component={Image} />
           <Route path="/movies" exact component={Movies} />
           <Route path="/connection" exact component={Connection} />
+          <Route path="/account" exact component={Account} />
           <Route path="/ad" exact component={Advertisement} />
           <Route path="/registration" exact component={Registration} />
           <Route path="/login" exact component={Login} />

@@ -4,7 +4,7 @@ const MovieList = (props) => {
   const movie = props.movies.map((movie)=>{
   const url = 'https://www.youtube.com/embed/' + movie.id.videoId;
   return(
-    <div className="movieView">
+    <div className="movieView" key={movie.id.videoId}>
       <iframe title="ytmovie"
         id="ytplayer" 
         type="ytplayer" 

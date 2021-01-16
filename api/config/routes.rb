@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only:[:create, :destroy]
   resource :session, only: [:create, :destroy], controller: 'sessions'
   resource :profile, only:[:show, :update]
+  resource :account, only:[:show]
   resources :articles, only:[:index, :create, :destroy]
   resources :connections, only:[:index, :create]
   resources :searches, only: [:index]
