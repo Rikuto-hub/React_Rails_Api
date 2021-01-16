@@ -7,6 +7,7 @@ class ConnectionsController < ApplicationController
       |connection|
       connection.as_json.merge({ 
         user_name: connection.user.profile.name,
+        avatar: url_for(connection.user.profile.avatar),
       })
     }
   end
