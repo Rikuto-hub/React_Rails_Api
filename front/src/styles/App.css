@@ -37,6 +37,10 @@
   }
 }
 
+body{
+  background-color: #FFFFFE;
+}
+
 .container{
   padding: 65px 20px;
 }
