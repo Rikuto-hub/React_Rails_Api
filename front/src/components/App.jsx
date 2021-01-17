@@ -9,13 +9,13 @@ import Image from './Image/Image';
 import Movies from './movie/Movies';
 import Connection from './connection/Connection';
 import ConnectionNew from './connection/ConnectionNew';
-import Advertisement from './ad/Advertisement';
 import Registration from './auth/Registration';
 import Login from './auth/Login';
 import Auth from './auth/Auth';
 import Profile from './profile/Profile';
 import ProfileNew from './profile/ProfileNew';
 import Account from './profile/Account'
+import Advertisement from './ad/Advertisement';
 
 const App = () =>{
   return(

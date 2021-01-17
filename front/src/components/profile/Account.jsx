@@ -5,6 +5,7 @@ import ProfileTop from './ProfileTop';
 import ProfileTag from './ProfileTag'
 import ConnectionView from '../connection/ConnectionView';
 import ProfileArticle from './ProfileArticle';
+import Loading from '../Loading';
 
 const Account = () => {
 
@@ -36,14 +37,20 @@ const Account = () => {
 
   return(
     <>
-      <ProfileTop profile = {profile} props = {props} />
-      <Router>
-        <ProfileTag path = {path}/>
-        <Switch>
-          <Route exact path="/account" render={() => <ConnectionView connections={connections} />} />
-          <Route exact path="/account/article" render={() => <ProfileArticle articles={articles} />} />
-        </Switch>
-      </Router>
+      {profile ?(
+        <>
+          <ProfileTop profile = {profile} props = {props} />
+          <Router>
+            <ProfileTag path = {path}/>
+            <Switch>
+              <Route exact path="/account" render={() => <ConnectionView connections={connections} />} />
+              <Route exact path="/account/article" render={() => <ProfileArticle articles={articles} />} />
+            </Switch>
+          </Router>
+        </>
+        ) : (
+        <Loading />
+      )}
     </>
   )
 }
