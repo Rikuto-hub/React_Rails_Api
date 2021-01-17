@@ -1,5 +1,4 @@
-import React, { useEffect,useState } from 'react';
-import json from '../../apis/json';
+import React, { useEffect } from 'react';
 import ConnectionView from './ConnectionView'
 import Loading from '../Loading';
 import '../../styles/connection.css'
@@ -8,20 +7,11 @@ import { BsPlusCircleFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { RiArticleLine } from "react-icons/ri";
 
-const Connection = () =>{
-  const [connections, setConnections] = useState([]);
+const Connection = ({connections, getConnections}) =>{
   useEffect(() => {
-    const getConnections = async() => {
-      try {
-        const response = await json.get('/connections')
-        setConnections(response.data)
-        console.log( response );
-      } catch (error) {
-        console.log(error)
-      }
-    }
     getConnections()
-  }, [])
+  }, [getConnections])
+
   return(
     <>
       {connections[0] ?(

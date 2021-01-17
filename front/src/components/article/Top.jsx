@@ -1,37 +1,13 @@
-import React, { useEffect,useState } from 'react';
-import json from '../../apis/json';
+import React, { useEffect } from 'react';
 import Article from './Article';
 import Loading from '../Loading';
 import ArticleSearch from './ArticleSearch';
 
-const Top = () =>{
-  const [articles, setArticles] = useState([]);
-
-  const searchArticles = async(word) => {
-    try {
-      const params = {
-        search: word
-      };
-      const response = await json.get('/searches',{params})
-      setArticles(response.data)
-      console.log( response );
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+const Top = ({articles,getArticles,searchArticles}) =>{
   useEffect(() => {
-    const getArticles = async() => {
-      try {
-        const response = await json.get('/articles')
-        setArticles(response.data)
-        console.log( response );
-      } catch (error) {
-        console.log(error)
-      }
-    }
     getArticles()
-  }, [])
+  }, [getArticles])
+
   return(
     <>
       {articles[0] ?(
