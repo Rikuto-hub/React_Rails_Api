@@ -2,6 +2,8 @@ import React from 'react';
 import ArticleShow from './ArticleShow';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import { Img } from 'react-image';
 import '../../styles/Article.css';
 
 const Article = ({articles}) => {
@@ -11,7 +13,10 @@ const Article = ({articles}) => {
       {React.Children.toArray(articles.map((article) => (
         <Link to={{pathname:"/article/show/", state: {article} }}>
           <div className='article' >
-            <img src={article.image} alt="画像がありません" />
+            <Img src={article.image}
+              loader={<Skeleton width={335} height={170}/>}
+              unloader={<Skeleton width={335} height={170}/>}
+            />
             <p>{article.name}</p>
             <p>¥{article.price}</p>
             <p>{article.content}</p>

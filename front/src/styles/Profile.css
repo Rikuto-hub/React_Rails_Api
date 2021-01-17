@@ -69,3 +69,11 @@
 .clear{
   clear: both;
 }
+
+.profileArticle .css-1vmnjpn-skeletonStyles-Skeleton{
+  float: left;
+}
+
+.profileTop .css-1vmnjpn-skeletonStyles-Skeleton{
+  border-radius: 50px;
+}
