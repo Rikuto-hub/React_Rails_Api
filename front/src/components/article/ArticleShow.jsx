@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import '../styles/ArticleShow.css';
-import json from '../apis/json';
+import '../../styles/ArticleShow.css';
+import json from '../../apis/json';
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(process.env.REACT_APP_PAY_PUBLIC_KEY);

@@ -1,7 +1,8 @@
 import React, { useEffect,useState } from 'react';
-import json from '../apis/json';
+import json from '../../apis/json';
 import ConnectionView from './ConnectionView'
-import '../styles/connection.css'
+import Loading from '../Loading';
+import '../../styles/connection.css'
 import { Link } from 'react-router-dom';
 import { BsPlusCircleFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
@@ -23,14 +24,20 @@ const Connection = () =>{
   }, [])
   return(
     <>
-      <div className='profileWrapper'>
-        <p><RiArticleLine className='profileIcon'/></p>
-        <Link to="/profile"><p><CgProfile className='profileIcon'/></p></Link>
-      </div>
-      < ConnectionView connections = {connections} />
-      <Link to="/connection/new/" className='connectionBtn'>
-          <BsPlusCircleFill />
-      </Link>
+      {connections[0] ?(
+        <>
+          <div className='profileWrapper'>
+            <p><RiArticleLine className='profileIcon'/></p>
+            <Link to="/profile"><p><CgProfile className='profileIcon'/></p></Link>
+          </div>
+          < ConnectionView connections = {connections} />
+          <Link to="/connection/new/" className='connectionBtn'>
+              <BsPlusCircleFill />
+          </Link>
+        </>
+        ) : (
+        <Loading />
+      )}
     </>
   )
 }

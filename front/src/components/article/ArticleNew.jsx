@@ -1,8 +1,8 @@
 import React from 'react';
-import json from '../apis/json';
+import json from '../../apis/json';
 import { useHistory } from 'react-router-dom';
 import { AiFillFileImage } from "react-icons/ai";
-import '../styles/ArticleNew.css';
+import '../../styles/ArticleNew.css';
 
 const ArticleNew = () =>{
 

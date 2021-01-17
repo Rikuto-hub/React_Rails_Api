@@ -2,7 +2,7 @@ import React from 'react';
 import ArticleShow from './ArticleShow';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import '../styles/Article.css';
+import '../../styles/Article.css';
 
 const Article = ({articles}) => {
 

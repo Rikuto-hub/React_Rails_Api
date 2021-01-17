@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
-import json from '../apis/json';
+import json from '../../apis/json';
 import Article from './Article';
+import Loading from '../Loading';
 import ArticleSearch from './ArticleSearch';
 
 const Top = () =>{
@@ -33,8 +34,14 @@ const Top = () =>{
   }, [])
   return(
     <>
-      <ArticleSearch searchArticles = {searchArticles} />
-      <Article articles = {articles} />
+      {articles[0] ?(
+        <>
+          <ArticleSearch searchArticles = {searchArticles} />
+          <Article articles = {articles} />
+        </>
+        ) : (
+        <Loading />
+      )}
     </>
   )
 }

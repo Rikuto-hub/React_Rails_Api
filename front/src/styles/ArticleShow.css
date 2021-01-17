@@ -2,8 +2,10 @@
   position: fixed;
   top: 85px;
   width: 335px;
-  background-color:rgba(99, 91, 91, 0.7);
+  /* background-color:rgba(99, 91, 91, 0.7); */
+  background-color:rgba(27, 26, 26, 0.7);
   margin: 0 auto;
+  color: white;
 }
 
 .articleShow p{
@@ -12,9 +14,13 @@
 
 .articleShow a{
   float: right;
-  margin: 0 10px 10px 0;
+  margin: 5px 10px 10px 0;
+  color: white;
 }
 
 #checkout-button{
   margin-left: 118px;
+  background-color: #fa5050;
+  padding: 2px;
+  border-radius: 10px;
 }

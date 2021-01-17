@@ -7,7 +7,7 @@ const Header = () =>{
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
-   }
+  }
 
   return(
     <header className='fadeRight'>

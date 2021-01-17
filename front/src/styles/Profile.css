@@ -65,3 +65,7 @@
   height: 111.66px;
   float: left;
 }
+
+.clear{
+  clear: both;
+}

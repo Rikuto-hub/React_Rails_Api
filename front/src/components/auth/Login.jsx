@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import json from '../apis/json';
+import json from '../../apis/json';
 import User from './User';
-import '../styles/Registration.css';
+import '../../styles/Registration.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");

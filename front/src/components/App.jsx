@@ -1,21 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Top from './components/Top';
-import articleCreate from './components/ArticleNew';
-import Image from './components/Image';
-import Movies from './components/Movies';
-import Connection from './components/Connection';
-import ConnectionNew from './components/ConnectionNew';
-import Advertisement from './components/Advertisement';
-import Registration from './components/Registration';
-import Login from './components/Login';
-import Auth from './components/Auth';
-import Profile from './components/Profile';
-import ProfileNew from './components/ProfileNew';
-import Account from './components/Account'
+import '../styles/App.css';
+import Header from './Header';
+import Footer from './Footer';
+import Top from './article/Top';
+import articleCreate from './article/ArticleNew';
+import Image from './Image/Image';
+import Movies from './movie/Movies';
+import Connection from './connection/Connection';
+import ConnectionNew from './connection/ConnectionNew';
+import Registration from './auth/Registration';
+import Login from './auth/Login';
+import Auth from './auth/Auth';
+import Profile from './profile/Profile';
+import ProfileNew from './profile/ProfileNew';
+import Account from './profile/Account'
+import Advertisement from './ad/Advertisement';
 
 const App = () =>{
   return(
