@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieList from './MovieList';
 import { CgSearchFound } from "react-icons/cg";
 import { ImYoutube2 } from "react-icons/im";
-import '../styles/Movie.css';
+import '../../styles/Movie.css';
 
 const Movies = () => {
 

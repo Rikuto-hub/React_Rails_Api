@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ArticleShow from './ArticleShow';
+import ArticleShow from '../article/ArticleShow';
 
 const ProfileArticle = ({articles}) => {
   return(

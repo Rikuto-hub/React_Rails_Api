@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/mountain.jpg';
-import '../styles/Advertisement.css'
+import logo from '../../images/mountain.jpg';
+import '../../styles/Advertisement.css'
 
 const Advertisement = () => {
   return( 

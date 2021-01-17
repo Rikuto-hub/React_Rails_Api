@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { CgSearchFound } from "react-icons/cg";
-import '../styles/Search.css';
+import '../../styles/Search.css';
 
 const ArticleSearch = ({searchArticles}) => {
 

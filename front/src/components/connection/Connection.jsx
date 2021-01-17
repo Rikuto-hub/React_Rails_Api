@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react';
-import json from '../apis/json';
+import json from '../../apis/json';
 import ConnectionView from './ConnectionView'
-import '../styles/connection.css'
+import '../../styles/connection.css'
 import { Link } from 'react-router-dom';
 import { BsPlusCircleFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import ImageList from './ImageList';
 import { CgSearchFound } from "react-icons/cg";
-import '../styles/Search.css';
+import '../../styles/Search.css';
 
 const Image = () => {
 

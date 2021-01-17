@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import json from '../apis/json';
+import json from '../../apis/json';
 import Article from './Article';
 import ArticleSearch from './ArticleSearch';
 

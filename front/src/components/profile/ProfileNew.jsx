@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import json from '../apis/json';
+import json from '../../apis/json';
 import { AiFillFileImage } from "react-icons/ai";
-import '../styles/Profile.css';
+import '../../styles/Profile.css';
 
 const ProfileNew = () => {
 
