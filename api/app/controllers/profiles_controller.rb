@@ -4,13 +4,13 @@ class ProfilesController < ApplicationController
     articles = articles.map{
       |article|
       article.as_json.merge({
-        image:url_for(article.image)
+        image: article.image.attachment.service.send(:object_for, article.image.key).public_url
       })
     }
     profile = @current_user.profile
     connections = @current_user.connections
     render json: profile.as_json.merge({
-      avatar: url_for(profile.avatar),
+      avatar: profile.avatar.attachment.service.send(:object_for, profile.avatar.key).public_url,
       connections: connections,
       articles: articles
     })
