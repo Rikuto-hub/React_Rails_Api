@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import ConnectionView from './ConnectionView'
+import ConnectionView from './ConnectionView';
 import Loading from '../Loading';
-import '../../styles/connection.css'
+import '../../styles/connection.css';
 import { Link } from 'react-router-dom';
 import { BsPlusCircleFill } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
