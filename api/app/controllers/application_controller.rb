@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
   before_action :check_xhr_header
 
   private
-
   def check_xhr_header
     return if request.xhr?
 

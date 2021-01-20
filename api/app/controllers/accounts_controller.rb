@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    articles = user.articles
+    articles = user.articles.with_attached_image
     articles = articles.map{
       |article|
       article.as_json.merge({
