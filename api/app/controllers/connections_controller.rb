@@ -2,12 +2,12 @@ class ConnectionsController < ApplicationController
   skip_before_action :require_login, only: [:index]
 
   def index
-    connections = Connection.all
+    connections = Connection.all.includes(:user)
     render json: connections.map{
       |connection|
       profile = connection.user.profile
       connection.as_json.merge({ 
-        user_name: connection.user.profile.name,
+        user_name: profile.name,
         avatar: profile.avatar.attachment.service.send(:object_for, profile.avatar.key).public_url,
       })
     }

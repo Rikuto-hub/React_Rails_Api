@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   def show
-    articles = @current_user.articles
+    articles = @current_user.articles.with_attached_image
     articles = articles.map{
       |article|
       article.as_json.merge({
